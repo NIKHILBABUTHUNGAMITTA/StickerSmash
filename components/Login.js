@@ -91,6 +91,7 @@ const styles = StyleSheet.create({
   containerLogin: {
     flex: 1,
     padding: 0,
+    width:390,
   },
 
   input: {
@@ -113,10 +114,10 @@ const styles = StyleSheet.create({
 
   image: {
     width: 390,
-    height: 480,
-    borderBottomLeftRadius: 600,
-    borderBottomRightRadius: 600,
-    resizeMode: 'cover',
+    height: 460,
+    borderBottomEndRadius:200,
+    borderBottomStartRadius:200,
+    resizeMode: 'contain',
   },
 
   textStyle: {
@@ -134,11 +135,11 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: 'white',
     borderRadius: 20,
-    width: 155,
+    width: 165,
     margin: 3,
     height: 40,
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: 5,
+    marginRight: 5,
     borderWidth: 1,
     borderColor: "grey",
     justifyContent: "center",
