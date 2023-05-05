@@ -16,25 +16,35 @@ const Login = () => {
     flexDirection: toggleBt ? "row" : "row-reverse",
     flexWrap: 'wrap',
   })
+  //password visibility
+  const [hidePwd, setHidePwd] = useState(true);
+
+  //Toggle password visibility
+  const managePasswordVisibility = () => {
+    setHidePwd(!hidePwd);
+  };
 
   const toggleBtn = () => {
     // toggleStyle.flexDirection = !toggleBt ? "row" : "row-reverse";
-    setToggleStyle({...toggleStyle,flexDirection : !toggleBt ? "row" : "row-reverse"})
+    setToggleStyle({ ...toggleStyle, flexDirection: !toggleBt ? "row" : "row-reverse" })
     setToggleBt(!toggleBt);
   }
 
   useEffect(() => {
-    
-  }, [toggleBt, toggleStyle])
+
+  }, [toggleBt, toggleStyle, hidePwd])
 
   return (
     <>
       <View style={[styles.containerLogin, { flexDirection: "column" }]}>
-        <View style={{ flex: 5, backgroundColor: "white" }} >
+        <View style={{ flex: 0.5, backgroundColor: "black" }} >
+
+        </View>
+        <View style={{ flex: 4.5, backgroundColor: "white" }} >
           <Image style={styles.image} source={logoOne} />
         </View>
 
-        <View style={{ flex: 4, backgroundColor: "white" }} >
+        <View style={{ flex: 5, backgroundColor: "white" }} >
           <Text style={styles.textStyle}>Welcome to PetLyf!</Text>
           <View style={toggleStyle}>
             {
@@ -48,7 +58,6 @@ const Login = () => {
                 <>
                   <Pressable onPress={toggleBtn} disabled={toggleBt} style={styles.button} title="Pet Microchip" ><Text>Pet Microchip</Text></Pressable>
                   <Pressable onPress={toggleBtn} disabled={!toggleBt} style={StyleSheet.flatten([styles.button, styles.noBorder])} title="Policy Number" ><Text>Policy Number</Text></Pressable>
-
                 </>
             }
           </View>
@@ -74,13 +83,14 @@ const Login = () => {
                 </>
             }
           </View>
+          <View style={{ alignItems: 'center', borderWidth: 0, paddingTop: 20 }}>
+            <Pressable style={styles.loginBtn} onPress={"#"}>
+              <Text style={styles.loginText}>Login</Text>
+            </Pressable>
+          </View>
+
         </View>
 
-        <View style={{ flex: 1, alignItems: 'center', borderWidth: 0 }}>
-          <Pressable style={styles.loginBtn} onPress={"#"}>
-            <Text style={styles.loginText}>Login</Text>
-          </Pressable>
-        </View>
       </View>
     </>
   );
@@ -91,7 +101,7 @@ const styles = StyleSheet.create({
   containerLogin: {
     flex: 1,
     padding: 0,
-    width:390,
+    width: 393,
   },
 
   input: {
@@ -113,11 +123,11 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    width: 390,
-    height: 460,
-    borderBottomLeftRadius:200,
-    borderBottomRightRadius:200,
-    resizeMode: 'contain',
+    width: 400,
+    height: 380,
+    borderBottomLeftRadius: 530,
+    borderBottomRightRadius: 600,
+    resizeMode: 'cover',
   },
 
   textStyle: {
