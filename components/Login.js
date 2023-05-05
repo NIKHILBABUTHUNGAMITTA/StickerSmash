@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image, Text, Pressable, TextInput } from "react-native";
+import { StyleSheet, View, Image, TouchableWithoutFeedback, Text, Pressable, TextInput, Keyboard } from "react-native";
 import React, { useEffect, useState } from 'react';
 import logoOne from '../assets/LogoOne.png';
 
@@ -36,62 +36,66 @@ const Login = () => {
 
   return (
     <>
-      <View style={[styles.containerLogin, { flexDirection: "column" }]}>
-        <View style={{ flex: 0.5, backgroundColor: "black" }} >
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={[styles.containerLogin, { flexDirection: "column" }]}>
+          <View style={{ flex: 0.5, backgroundColor: "black" }} >
 
-        </View>
-        <View style={{ flex: 4.5, backgroundColor: "white" }} >
-          <Image style={styles.image} source={logoOne} />
-        </View>
-
-        <View style={{ flex: 5, backgroundColor: "white" }} >
-          <Text style={styles.textStyle}>Welcome to PetLyf!</Text>
-          <View style={toggleStyle}>
-            {
-              toggleBt ?
-                <>
-                  <Pressable onPress={toggleBtn} disabled={!toggleBt} style={styles.button} title="Policy Number" ><Text>Policy Number</Text></Pressable>
-                  <Pressable onPress={toggleBtn} disabled={toggleBt} style={StyleSheet.flatten([styles.button, styles.noBorder])} title="Pet Microchip" ><Text>Pet Microchip</Text></Pressable>
-
-                </>
-                :
-                <>
-                  <Pressable onPress={toggleBtn} disabled={toggleBt} style={styles.button} title="Pet Microchip" ><Text>Pet Microchip</Text></Pressable>
-                  <Pressable onPress={toggleBtn} disabled={!toggleBt} style={StyleSheet.flatten([styles.button, styles.noBorder])} title="Policy Number" ><Text>Policy Number</Text></Pressable>
-                </>
-            }
           </View>
-          <View style={styles.form}>
-            {
-              toggleBt ?
-                <>
-                  <Text style={{ fontSize: 15, paddingBottom: 5, paddingLeft: 10 }}>Policy Number</Text>
-                  <TextInput style={styles.input} onChangeText={""} value={""}></TextInput>
-
-                  <Text style={{ fontSize: 15, paddingBottom: 5, paddingLeft: 10 }}>Password</Text>
-                  <TextInput style={styles.input} onChangeText={""} value={""}></TextInput>
-                  <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={""} >Forgot Password ?</Text>
-                </>
-                :
-                <>
-                  <Text style={{ fontSize: 15, paddingBottom: 5, paddingLeft: 10 }}>Pet Microchip</Text>
-                  <TextInput style={styles.input} onChangeText={""} value={""}></TextInput>
-
-                  <Text style={{ fontSize: 15, paddingBottom: 5, paddingLeft: 10 }}>Password</Text>
-                  <TextInput style={styles.input} onChangeText={""} value={""}></TextInput>
-                  <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={""} >Forgot Password ?</Text>
-                </>
-            }
-          </View>
-          <View style={{ alignItems: 'center', borderWidth: 0, paddingTop: 20 }}>
-            <Pressable style={styles.loginBtn} onPress={"#"}>
-              <Text style={styles.loginText}>Login</Text>
-            </Pressable>
+          <View style={{ flex: 4.5, backgroundColor: "white" }} >
+            <Image style={styles.image} source={logoOne} />
           </View>
 
-        </View>
+          <View style={{ flex: 5, backgroundColor: "white" }} >
+            <Text style={styles.textStyle}>Welcome to PetLyf!</Text>
+            <View style={toggleStyle}>
+              {
+                toggleBt ?
+                  <>
+                    <Pressable onPress={toggleBtn} disabled={!toggleBt} style={styles.button} title="Policy Number" ><Text>Policy Number</Text></Pressable>
+                    <Pressable onPress={toggleBtn} disabled={toggleBt} style={StyleSheet.flatten([styles.button, styles.noBorder])} title="Pet Microchip" ><Text>Pet Microchip</Text></Pressable>
 
-      </View>
+                  </>
+                  :
+                  <>
+                    <Pressable onPress={toggleBtn} disabled={toggleBt} style={styles.button} title="Pet Microchip" ><Text>Pet Microchip</Text></Pressable>
+                    <Pressable onPress={toggleBtn} disabled={!toggleBt} style={StyleSheet.flatten([styles.button, styles.noBorder])} title="Policy Number" ><Text>Policy Number</Text></Pressable>
+                  </>
+              }
+            </View>
+
+            <View style={styles.form}>
+              {
+                toggleBt ?
+                  <>
+                    <Text style={{ fontSize: 15, paddingBottom: 5, paddingLeft: 10 }}>Policy Number</Text>
+                    <TextInput style={styles.input} onChangeText={""} value={""}></TextInput>
+
+                    <Text style={{ fontSize: 15, paddingBottom: 5, paddingLeft: 10 }}>Password</Text>
+                    <TextInput style={styles.input} onChangeText={""} value={""}></TextInput>
+                    <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={""} >Forgot Password ?</Text>
+                  </>
+                  :
+                  <>
+                    <Text style={{ fontSize: 15, paddingBottom: 5, paddingLeft: 10 }}>Pet Microchip</Text>
+                    <TextInput style={styles.input} onChangeText={""} value={""}></TextInput>
+
+                    <Text style={{ fontSize: 15, paddingBottom: 5, paddingLeft: 10 }}>Password</Text>
+                    <TextInput style={styles.input} onChangeText={``} value={''}></TextInput>
+                    <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={``} >Forgot Password ?</Text>
+                  </>
+              }
+            </View>
+
+            <View style={{ alignItems: 'center', borderWidth: 0, paddingTop: 20 }}>
+              <Pressable style={styles.loginBtn} onPress={"#"}>
+                <Text style={styles.loginText}>Login</Text>
+              </Pressable>
+            </View>
+
+          </View>
+
+        </View>
+      </TouchableWithoutFeedback>
     </>
   );
 };
@@ -125,8 +129,8 @@ const styles = StyleSheet.create({
   image: {
     width: 400,
     height: 380,
-    borderBottomLeftRadius: 530,
-    borderBottomRightRadius: 600,
+    borderBottomLeftRadius: 430,
+    borderBottomRightRadius: 500,
     resizeMode: 'cover',
   },
 
