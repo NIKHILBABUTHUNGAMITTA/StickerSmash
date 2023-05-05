@@ -71,7 +71,7 @@ const Login = () => {
   //useefffect
   useEffect(() => {
     
-  }, [toggleBt, toggleStyle, showPassword, password,logoIndex])
+  }, [toggleBt, toggleStyle, showPassword, password])
 
   return (
     <>
@@ -133,7 +133,7 @@ const Login = () => {
                       <TextInput style={styles.input} onChangeText={pass => setPassword(pass)} secureTextEntry={!showPassword} value={password} ></TextInput>
                       {renderPasswordVisibilityToggle()}
                     </View>
-                    <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={``} >Forgot Password ?</Text>
+                    <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={()=>{console.log("forgot password")}} >Forgot Password ?</Text>
                   </>
               }
             </View>
@@ -194,8 +194,8 @@ const styles = StyleSheet.create({
 
   image: {
     width: 400,
-    height: 380,
-    borderBottomLeftRadius: 430,
+    height: 385,
+    borderBottomLeftRadius: 450,
     borderBottomRightRadius: 500,
     resizeMode: 'cover',
   },
