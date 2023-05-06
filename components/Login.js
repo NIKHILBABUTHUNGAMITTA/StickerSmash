@@ -1,6 +1,6 @@
-import { StyleSheet, View, Image, TouchableWithoutFeedback, Text, Pressable, TextInput, Keyboard, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Image,Animated, TouchableWithoutFeedback, Text, Pressable, TextInput, Keyboard, TouchableOpacity } from "react-native";
 import React, { useEffect, useState } from 'react';
-// import logoOne from '../assets/LogoOne.png';
+import logo5 from '../assets/LogoOne.png';
 import { Ionicons } from '@expo/vector-icons';
 import policy from '../assets/login/policy.png';
 import microchip from '../assets/login/microchip.png';
@@ -11,7 +11,7 @@ import logo2 from '../assets/login/2.jpg';
 import logo3 from '../assets/login/3.jpg';
 import logo4 from '../assets/login/4.jpg';
 
-const logos = [logo1,logo2,logo3,logo4];
+const logos = [logo1,logo2,logo3,logo4,logo5];
 
 const Login = () => {
 
@@ -38,7 +38,7 @@ const Login = () => {
 
   //logo handler
   const imageChange = () => {
-      setLogoIndex((logoIndex+1)%4);
+      setLogoIndex((logoIndex+1)%5);
   }
 
   //submit login details
