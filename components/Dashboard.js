@@ -1,6 +1,6 @@
 import React from 'react';
 // import { useNavigation } from '@react-navigation/native'
-import { View, Text, StyleSheet, Pressable, Image } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Image, ScrollView } from 'react-native';
 import { Border, Color, FontFamily, FontSize } from "../GlobalStyles";
 import TabNavigation from './TabNavigation';
 
@@ -10,8 +10,8 @@ const Dashboard = () => {
 
     return (
         <>
-            <View style={styles.container}>
-                <View style={{ backgroundColor: "black", padding: 20, marginBottom: 7, }}></View>
+            <ScrollView style={styles.container}>
+                <View style={{ backgroundColor: "black", padding: 20, marginBottom: 3, }}></View>
                 {/* ----- bell logo with action -------- */}
                 <View style={styles.innerHeader}>
                     <Text style={styles.welcomeBack}>Welcome back,
@@ -91,7 +91,7 @@ const Dashboard = () => {
                     </View>
                 </View>
 
-            </View>
+            </ScrollView>
             <TabNavigation />
         </>
     )

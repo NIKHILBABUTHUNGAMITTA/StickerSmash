@@ -10,10 +10,14 @@ import logo1 from '../assets/login/1.jpg';
 import logo2 from '../assets/login/2.jpg';
 import logo3 from '../assets/login/3.jpg';
 import logo4 from '../assets/login/4.jpg';
+import Dashboard from "./Dashboard";
+import { useNavigation } from "@react-navigation/core";
 
 const logos = [logo1, logo2, logo3, logo4, logo5];
 
 const Login = () => {
+
+  const navigation = useNavigation();
 
   const { width, height, fontScale } = useWindowDimensions();
 
@@ -53,7 +57,8 @@ const Login = () => {
 
   //submit login details
   const submit = () => {
-    alert(`${username} and ${password}`);
+    // alert(`${username} and ${password}`);
+    navigation.navigate("Dashboard")
   }
 
   //password view and hide
