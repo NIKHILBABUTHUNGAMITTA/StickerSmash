@@ -1,0 +1,74 @@
+import React from 'react'
+import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
+import { Color, FontFamily, FontSize } from '../GlobalStyles';
+
+
+const TabNavigation = () => {
+    return (
+        <View style={styles.container}>
+            {/* ---- Home----- */}
+            <Pressable onPress={() => alert("Home is clicked")}>
+                <View style={styles.innerIcons}>
+                    <Image resizeMode={'cover'} source={require('../assets/assets/4-4.png')} style={styles.logo} />
+                    <Text style={styles.logoText}>Home</Text>
+                </View>
+            </Pressable>
+
+            {/* ---- Servicing----- */}
+            <Pressable onPress={() => alert("Servicing is clicked")}>
+                <View style={styles.innerIcons}>
+                    <Image resizeMode={'cover'} source={require('../assets/assets/1-1.png')} style={styles.logo} />
+                    <Text style={styles.logoText}>Servicing</Text>
+                </View>
+            </Pressable>
+
+            {/* ---- File a Claim----- */}
+            <Pressable onPress={() => alert("File a Claim is clicked")}>
+                <View style={styles.innerIcons}>
+                    <Image resizeMode={'cover'} source={require('../assets/assets/2-316017.png')} style={styles.logo} />
+                    <Text style={styles.logoText}>File a Claim</Text>
+                </View>
+            </Pressable>
+
+            {/* ---- Home----- */}
+            <Pressable onPress={() => alert("Pet care is clicked")}>
+                <View style={styles.innerIcons}>
+                    <Image resizeMode={'cover'} source={require('../assets/assets/3-33.png')} style={styles.logo} />
+                    <Text style={styles.logoText}>Pet Care</Text>
+                </View>
+            </Pressable>
+
+        </View>
+    )
+}
+
+export default TabNavigation
+
+
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        backgroundColor: 'grey',
+        marginHorizontal: 16,
+        marginBottom: 12,
+        borderRadius: 30,
+        justifyContent: 'center',
+    },
+    innerIcons: {
+        alignSelf: 'center',
+        paddingHorizontal: 15,
+        paddingVertical: 12,
+    },
+    logo: {
+        width: 55,
+        height: 55,
+    },
+    logoText: {
+        color: Color.white,
+        fontFamily: FontFamily.poppinsMedium,
+        fontWeight: "500",
+        fontSize: FontSize.size_xs,
+        textAlign: "center",
+        marginTop: -10,
+    }
+})

@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image,Animated, TouchableWithoutFeedback, Text, Pressable, TextInput, Keyboard, TouchableOpacity } from "react-native";
+import { StyleSheet, View, Image, Animated, TouchableWithoutFeedback, Text, Pressable, TextInput, Keyboard, TouchableOpacity, useWindowDimensions } from "react-native";
 import React, { useEffect, useState } from 'react';
 import logo5 from '../assets/LogoOne.png';
 import { Ionicons } from '@expo/vector-icons';
@@ -11,9 +11,19 @@ import logo2 from '../assets/login/2.jpg';
 import logo3 from '../assets/login/3.jpg';
 import logo4 from '../assets/login/4.jpg';
 
-const logos = [logo1,logo2,logo3,logo4,logo5];
+const logos = [logo1, logo2, logo3, logo4, logo5];
 
 const Login = () => {
+
+  const { width, height, fontScale } = useWindowDimensions();
+
+  const [logoDimension, setLogoDimension] = useState({
+    width: width,
+    height: width,
+    borderBottomLeftRadius: height,
+    borderBottomRightRadius: height,
+    resizeMode: 'cover',
+  })
 
   //useState
   const [toggleBt, setToggleBt] = useState(true);
@@ -25,20 +35,20 @@ const Login = () => {
     marginHorizontal: 20,
     marginTop: 10,
     marginBottom: 10,
-    height : 50,
+    height: 50,
     borderColor: 'grey',
-    alignItems : 'center',
+    alignItems: 'center',
     borderRadius: 30,
     flexDirection: toggleBt ? "row" : "row-reverse",
     flexWrap: 'wrap',
-    paddingTop : 2,
+    paddingTop: 2,
   });
 
-  const [logoIndex,setLogoIndex] = useState(0);
+  const [logoIndex, setLogoIndex] = useState(0);
 
   //logo handler
   const imageChange = () => {
-      setLogoIndex((logoIndex+1)%5);
+    setLogoIndex((logoIndex + 1) % 5);
   }
 
   //submit login details
@@ -70,8 +80,14 @@ const Login = () => {
 
   //useefffect
   useEffect(() => {
-    
-  }, [toggleBt, toggleStyle, showPassword, password])
+    setLogoDimension({
+      width: width,
+      height: width,
+      borderBottomLeftRadius: height,
+      borderBottomRightRadius: height,
+      resizeMode: 'cover',
+    })
+  }, [toggleBt, toggleStyle, showPassword, password,width])
 
   return (
     <>
@@ -79,10 +95,10 @@ const Login = () => {
         <View style={[styles.containerLogin, { flexDirection: "column" }]}>
           <View style={{ flex: 0.4, backgroundColor: "white" }} ></View>
           <View style={{ flex: 4.5, backgroundColor: "white" }} >
-            <Image style={styles.image} source={logos[logoIndex]} />
+            <Image style={logoDimension} source={logos[logoIndex]} />
           </View>
 
-          <View style={{ flex: 5, backgroundColor: "white" }} >
+          <View style={{ flex: 5, backgroundColor: "white",alignSelf:'center' }} >
             <Text style={styles.textStyle}>Welcome to PetLyf!</Text>
             <View style={toggleStyle}>
               {
@@ -116,7 +132,7 @@ const Login = () => {
                       <TextInput style={styles.input} onChangeText={pass => setPassword(pass)} secureTextEntry={!showPassword} value={password} ></TextInput>
                       {renderPasswordVisibilityToggle()}
                     </View>
-                    <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={()=>{}} >Forgot Password ?</Text>
+                    <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={() => { }} >Forgot Password ?</Text>
                   </>
                   :
                   <>
@@ -133,7 +149,7 @@ const Login = () => {
                       <TextInput style={styles.input} onChangeText={pass => setPassword(pass)} secureTextEntry={!showPassword} value={password} ></TextInput>
                       {renderPasswordVisibilityToggle()}
                     </View>
-                    <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={()=>{console.log("forgot password")}} >Forgot Password ?</Text>
+                    <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={() => { console.log("forgot password") }} >Forgot Password ?</Text>
                   </>
               }
             </View>
@@ -192,13 +208,6 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
   },
 
-  image: {
-    width: 400,
-    height: 385,
-    borderBottomLeftRadius: 450,
-    borderBottomRightRadius: 500,
-    resizeMode: 'cover',
-  },
 
   textStyle: {
     textAlign: "center",
@@ -224,7 +233,7 @@ const styles = StyleSheet.create({
     borderColor: "grey",
     justifyContent: "center",
     alignItems: 'center',
-    
+
   },
 
   noBorder: {
