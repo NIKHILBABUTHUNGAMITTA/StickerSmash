@@ -9,6 +9,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import PolicyInformation from './components/PolicyInformation';
+import ClaimHistory from './components/ClaimHistory';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ export default function App() {
           <Stack.Screen name='Login' component={Login} />
           <Stack.Screen name='Dashboard' component={Dashboard} />
           <Stack.Screen name='PolicyInformation' component={PolicyInformation} />
+          <Stack.Screen name="ClaimHistory" component={ClaimHistory} />
         </Stack.Navigator>
       </NavigationContainer>
       <StatusBar style="auto" />

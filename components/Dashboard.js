@@ -75,7 +75,7 @@ const Dashboard = () => {
 
                     {/*---------- My claim history---------- */}
                     <View style={styles.menuItem}>
-                        <Pressable style={[styles.menuInnerItem, { backgroundColor: Color.aliceblue }]} onPress={() => alert("My Claim is clicked")}>
+                        <Pressable style={[styles.menuInnerItem, { backgroundColor: Color.aliceblue }]} onPress={() => navigation.navigate("ClaimHistory")}>
                             <View style={styles.policyremovebgpreviewBg}>
                                 <Image style={styles.policyremovebgpreview} source={require("../assets/assets/premium-policyremovebgpreview-1.png")} />
                             </View>

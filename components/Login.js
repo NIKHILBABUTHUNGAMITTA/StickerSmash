@@ -92,34 +92,42 @@ const Login = () => {
       borderBottomRightRadius: height,
       resizeMode: 'cover',
     })
-  }, [toggleBt, toggleStyle, showPassword, password,width])
+  }, [toggleBt, toggleStyle, showPassword, password, width])
 
   return (
     <>
+      {/* ------ TouchableWithOutFeedback for keyboard dismiss action */}
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+
         <View style={[styles.containerLogin, { flexDirection: "column" }]}>
+          {/* ----------- tab space for highlighting signal,wifi and notifications ------------ */}
           <View style={{ flex: 0.4, backgroundColor: "black" }} ></View>
+
+          {/* ------------- Logo image above the login input form ------------- */}
           <View style={{ flex: 4.5, backgroundColor: "white" }} >
             <Image style={logoDimension} source={logos[logoIndex]} />
           </View>
 
-          <View style={{ flex: 5, backgroundColor: "white",alignSelf:'center' }} >
+
+          <View style={{ flex: 5, backgroundColor: "white", alignSelf: 'center' }} >
+            {/* ------- sliding button && PolicyNumber and Pet Microchip -------------- */}
             <Text style={styles.textStyle}>Welcome to PetLyf!</Text>
             <View style={toggleStyle}>
               {
                 toggleBt ?
                   <>
-                    <Pressable onPress={toggleBtn} disabled={!toggleBt} style={styles.button} title="Policy Number" ><Text>Policy Number</Text></Pressable>
-                    <Pressable onPress={toggleBtn} disabled={toggleBt} style={StyleSheet.flatten([styles.button, styles.noBorder])} title="Pet Microchip" ><Text>Pet Microchip</Text></Pressable>
+                    <Pressable onPress={toggleBtn} disabled={toggleBt} style={styles.button} title="Policy Number" ><Text>Policy Number</Text></Pressable>
+                    <Pressable onPress={toggleBtn} disabled={!toggleBt} style={StyleSheet.flatten([styles.button, styles.noBorder])} title="Pet Microchip" ><Text>Pet Microchip</Text></Pressable>
                   </>
                   :
                   <>
-                    <Pressable onPress={toggleBtn} disabled={toggleBt} style={styles.button} title="Pet Microchip" ><Text>Pet Microchip</Text></Pressable>
-                    <Pressable onPress={toggleBtn} disabled={!toggleBt} style={StyleSheet.flatten([styles.button, styles.noBorder])} title="Policy Number" ><Text>Policy Number</Text></Pressable>
+                    <Pressable onPress={toggleBtn} disabled={!toggleBt} style={styles.button} title="Pet Microchip" ><Text>Pet Microchip</Text></Pressable>
+                    <Pressable onPress={toggleBtn} disabled={toggleBt} style={StyleSheet.flatten([styles.button, styles.noBorder])} title="Policy Number" ><Text>Policy Number</Text></Pressable>
                   </>
               }
             </View>
 
+            {/* -------- Input form ------------- */}
             <View style={styles.form}>
               {
                 toggleBt ?
@@ -159,6 +167,7 @@ const Login = () => {
               }
             </View>
 
+            {/* ---------- Login button ------------------- */}
             <View style={{ alignItems: 'center', borderWidth: 0, paddingTop: 20 }}>
               <Pressable style={styles.loginBtn} onPress={submit}>
                 <Text style={styles.loginText}>Login</Text>
