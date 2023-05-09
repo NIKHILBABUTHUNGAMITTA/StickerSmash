@@ -12,6 +12,7 @@ import logo3 from '../assets/login/3.jpg';
 import logo4 from '../assets/login/4.jpg';
 import Dashboard from "./Dashboard";
 import { useNavigation } from "@react-navigation/core";
+import { FontFamily } from "../GlobalStyles";
 
 const logos = [logo1, logo2, logo3, logo4, logo5];
 
@@ -225,7 +226,7 @@ const styles = StyleSheet.create({
 
   textStyle: {
     textAlign: "center",
-    fontFamily: "sans-serif",
+    fontFamily: FontFamily.plusJakartaSansRegular,
     fontSize: 32,
     fontWeight: 600,
     margin: 10,
