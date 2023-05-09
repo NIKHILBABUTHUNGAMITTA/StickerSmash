@@ -1,12 +1,12 @@
 import React from 'react';
-// import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 import { View, Text, StyleSheet, Pressable, Image, ScrollView } from 'react-native';
 import { Border, Color, FontFamily, FontSize } from "../GlobalStyles";
 import TabNavigation from './TabNavigation';
 
 const Dashboard = () => {
     //usenavigate hook
-    // const navigation = useNavigation();
+    const navigation = useNavigation();
 
     return (
         <>
@@ -24,10 +24,13 @@ const Dashboard = () => {
                         />
                     </Pressable>
                 </View>
+
                 <View style={styles.petlogo}>
                     <Image style={styles.image39Icon} source={require("../assets/assets/image-391.png")} />
                     <Text style={styles.petlogoText}>Petlyf Solutions</Text>
                 </View>
+
+
                 <View style={styles.menu}>
 
                     {/* ------- My account ---------- */}
@@ -42,7 +45,7 @@ const Dashboard = () => {
 
                     {/* ------- My Policy ---------- */}
                     <View style={styles.menuItem}>
-                        <Pressable style={[styles.menuInnerItem, { backgroundColor: Color.honeydew_200 }]} onPress={() => alert("My Policy is clicked")}>
+                        <Pressable style={[styles.menuInnerItem, { backgroundColor: Color.honeydew_200 }]} onPress={() => navigation.navigate("PolicyInformation")}>
                             <View style={styles.dataprotectionremovebgpreviewBg}>
                                 <Image style={styles.dataprotectionremovebgpreview} source={require("../assets/assets/dataprotectionremovebgpreview-2.png")} />
                             </View>
@@ -125,7 +128,7 @@ const styles = StyleSheet.create({
     },
     petlogo: {
         alignSelf: 'center',
-        padding: 7,
+        padding: 5,
     },
     image39Icon: {
         width: 266,
@@ -166,7 +169,7 @@ const styles = StyleSheet.create({
     },
     menuText: {
         fontFamily: FontFamily.plusJakartaSansSemibold,
-        fontWeight: "700",
+        fontWeight: "600",
         fontSize: FontSize.subheading_size,
         color: Color.text,
     },

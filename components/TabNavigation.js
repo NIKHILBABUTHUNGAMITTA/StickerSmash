@@ -1,13 +1,15 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react'
 import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
 import { Color, FontFamily, FontSize } from '../GlobalStyles';
 
 
 const TabNavigation = () => {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             {/* ---- Home----- */}
-            <Pressable onPress={() => alert("Home is clicked")}>
+            <Pressable onPress={() => navigation.navigate("Dashboard")}>
                 <View style={styles.innerIcons}>
                     <Image resizeMode={'cover'} source={require('../assets/assets/4-4.png')} style={styles.logo} />
                     <Text style={styles.logoText}>Home</Text>
@@ -49,19 +51,19 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         backgroundColor: 'grey',
-        marginHorizontal: 16,
+        marginHorizontal: 17,
         marginBottom: 12,
         borderRadius: 30,
         justifyContent: 'center',
     },
     innerIcons: {
         alignSelf: 'center',
-        paddingHorizontal: 15,
-        paddingVertical: 12,
+        paddingHorizontal: 14,
+        paddingVertical: 10,
     },
     logo: {
-        width: 55,
-        height: 55,
+        width: 50,
+        height: 50,
     },
     logoText: {
         color: Color.white,

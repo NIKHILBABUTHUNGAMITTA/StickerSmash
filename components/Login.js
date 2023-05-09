@@ -98,7 +98,7 @@ const Login = () => {
     <>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={[styles.containerLogin, { flexDirection: "column" }]}>
-          <View style={{ flex: 0.4, backgroundColor: "white" }} ></View>
+          <View style={{ flex: 0.4, backgroundColor: "black" }} ></View>
           <View style={{ flex: 4.5, backgroundColor: "white" }} >
             <Image style={logoDimension} source={logos[logoIndex]} />
           </View>
@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
   },
 
   loginBtn: {
-    backgroundColor: '#007FFF',
+    backgroundColor: 'darkblue',
     borderRadius: 20,
     width: 120,
     margin: 3,
