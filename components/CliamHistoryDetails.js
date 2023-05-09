@@ -16,7 +16,7 @@ const ClaimHistoryDetails = () => {
 
                 {/* ----- back button ------ */}
                 <View>
-                    <Pressable onPress={() => navigation.navigate("Dashboard")}>
+                    <Pressable onPress={() => navigation.navigate("ClaimHistory")}>
                         <Image source={require("../assets/assets/group.png")} style={styles.backbutton} />
                     </Pressable>
                 </View>
@@ -65,7 +65,10 @@ const styles = StyleSheet.create({
 
     },
     formControl:{
-        
+        borderWidth:1,
+        padding:10,
+        margin:10,
+
     },
     // button
     nextBtn: {

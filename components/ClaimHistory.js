@@ -23,7 +23,7 @@ const ClaimHistory = () => {
 
         {/* ------------ List of cliams ------------ */}
         <ScrollView style={styles.claimsList}>
-          <Pressable style={[styles.claim, styles.shadowProp]} onPress={()=>alert("claim is clicked")}>
+          <Pressable style={[styles.claim, styles.shadowProp]} onPress={()=>navigation.navigate("ClaimHistroyDetails")}>
             <View style={{}}>
               <Text style={styles.claimTitle}>Claim #3812739417</Text>
               <Text style={styles.claiminfo}>Ear Infection claim dated 15th May 2023</Text>
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
   nextBtn: {
     width: 8,
     height: 12,
+    
   },
   claimTitle: {
     fontSize: 17,
