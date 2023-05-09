@@ -26,6 +26,7 @@ async function load() {
     "Work_Sans_semibold": require('./assets/assets/fonts/Work_Sans_semibold.ttf'),
     "Work_Sans_bold": require('./assets/assets/fonts/Work_Sans_bold.ttf'),
   })
+  console.log("fonts loaded");
 }
 
 load();

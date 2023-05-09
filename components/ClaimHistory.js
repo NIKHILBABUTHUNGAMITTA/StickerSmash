@@ -1,51 +1,62 @@
 import { useNavigation } from '@react-navigation/core';
-import React from 'react';
-import { View, Text, StyleSheet, Pressable, Image, ScrollView } from 'react-native';
+import React, { useEffect, useState,  } from 'react';
+import { View, Text, StyleSheet, Pressable, Image, ScrollView, Alert } from 'react-native';
 import { FontFamily, FontSize } from '../GlobalStyles';
+import NoClaimsFoundPage from './NoClaimsFoundPage';
 import TabNavigation from './TabNavigation';
 
 const ClaimHistory = () => {
   const navigation = useNavigation();
+  const [value, setValue] = useState(["sridhar"]);
+
   return (
     <>
-      <View style={styles.container}>
-        <View style={{ backgroundColor: "#f1f1f1", padding: 20, marginBottom: 7, }}></View>
+      {
+        value.length > 0
+          ?
+          <>
+            <View style={styles.container}>
+              <View style={{ backgroundColor: "#f1f1f1", padding: 20, marginBottom: 7, }}></View>
 
-        {/* ----- My cliams History ---------- */}
-        <Text style={styles.headerText}>My Claims History</Text>
+              {/* ----- My cliams History ---------- */}
+              <Text style={styles.headerText}>My Claims History</Text>
 
-        {/* ---------- back button -------------- */}
-        <View>
-          <Pressable onPress={() => navigation.navigate("Dashboard")}>
-            <Image source={require("../assets/assets/group.png")} style={styles.backbutton} />
-          </Pressable>
-        </View>
+              {/* ---------- back button -------------- */}
+              <View>
+                <Pressable onPress={() => navigation.navigate("Dashboard")}>
+                  <Image source={require("../assets/assets/group.png")} style={styles.backbutton} />
+                </Pressable>
+              </View>
 
-        {/* ------------ List of cliams ------------ */}
-        <ScrollView style={styles.claimsList}>
-          <Pressable style={[styles.claim, styles.shadowProp]} onPress={()=>navigation.navigate("ClaimHistroyDetails")}>
-            <View style={{}}>
-              <Text style={styles.claimTitle}>Claim #3812739417</Text>
-              <Text style={styles.claiminfo}>Ear Infection claim dated 15th May 2023</Text>
+              {/* ------------ List of cliams ------------ */}
+              <ScrollView style={styles.claimsList}>
+                <Pressable style={[styles.claim, styles.shadowProp]} onPress={() => navigation.navigate("ClaimHistroyDetails")}>
+                  <View style={{}}>
+                    <Text style={styles.claimTitle}>Claim #3812739417</Text>
+                    <Text style={styles.claiminfo}>Ear Infection claim dated 15th May 2023</Text>
+                  </View>
+                  {/* <View> */}
+                  <Image
+                    style={styles.nextBtn}
+                    source={require('../assets/assets/icon--light--month-chevron10.png')}
+                  />
+                  {/* </View> */}
+                </Pressable>
+              </ScrollView>
             </View>
-            {/* <View> */}
-            <Image
-              style={styles.nextBtn}
-              source={require('../assets/assets/icon--light--month-chevron10.png')}
-            />
-            {/* </View> */}
-          </Pressable>
-        </ScrollView>
-      </View>
 
 
-      {/* ------- Next Button ---------*/}
-      <View>
-        <Pressable style={styles.nextButton}>
-          <Text style={styles.nextText}>NEXT</Text>
-        </Pressable>
-      </View>
-      <TabNavigation />
+            {/* ------- Next Button ---------*/}
+            {/* <View>
+                  <Pressable style={styles.nextButton}>
+                    <Text style={styles.nextText}>NEXT</Text>
+                  </Pressable>
+                </View> */}
+            <TabNavigation />
+          </>
+          :
+          <NoClaimsFoundPage />
+      }
     </>
   )
 }
@@ -57,25 +68,27 @@ const styles = StyleSheet.create({
   nextBtn: {
     width: 8,
     height: 12,
-    
+
   },
   claimTitle: {
-    fontSize: 17,
-    fontWeight: '600',
-    color: 'black',
+    fontSize: 16,
+    fontFamily: FontFamily.bodyMain,
+    fontWeight: '500',
+    color: '#555555',
   },
   claiminfo: {
-    fontSize: 10,
+    fontSize: 11,
+    fontFamily: FontFamily.bodyMain,
     paddingVertical: 2,
-    color: 'grey',
-    fontWeight: '600',
+    color: '#ABABAB',
+    fontWeight: '500',
   },
   claimsList: {
     flexDirection: 'column',
   },
   claim: {
     margin: 17,
-    padding: 18,
+    padding: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     // borderWidth: 1,
@@ -83,9 +96,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   shadowProp: {
-    shadowOffset: { width: 3, height:3 },
+    shadowOffset: { width: 2, height: 2 },
     shadowColor: 'black',
-    shadowRadius:5,
+    shadowRadius: 1,
     shadowOpacity: 2,
     elevation: 10,
     backgroundColor: "white" // invisible color

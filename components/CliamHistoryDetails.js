@@ -8,6 +8,7 @@ const ClaimHistoryDetails = () => {
     const navigation = useNavigation();
     return (
         <>
+
             <View style={styles.container}>
                 <View style={{ backgroundColor: "#f1f1f1", padding: 20, marginBottom: 7, }}></View>
 
@@ -33,19 +34,40 @@ const ClaimHistoryDetails = () => {
                 <View style={styles.form}>
                     <View style={styles.formItem}>
                         <Text style={styles.formLabel}>Claim Amount</Text>
-                        <TextInput style={styles.formControl} value={100} />
+                        <TextInput style={styles.formControl} placeholder="$750" />
+                    </View>
+
+                    <View style={styles.formItem}>
+                        <Text style={styles.formLabel}>Claim Date</Text>
+                        <TextInput style={styles.formControl} placeholder="DD-MM-YYYY" />
+                    </View>
+
+                    <View style={styles.formItem}>
+                        <Text style={styles.formLabel}>Policy Number</Text>
+                        <TextInput style={styles.formControl} placeholder="XX-XX-XX-XX" />
+                    </View>
+
+                    <View style={styles.formItem}>
+                        <Text style={styles.formLabel}>Pet Name</Text>
+                        <TextInput style={styles.formControl} placeholder="SHIRO" />
+                    </View>
+
+                    <View style={styles.formItem}>
+                        <Text style={styles.formLabel}>Policy Holder Name</Text>
+                        <TextInput style={styles.formControl} placeholder="Arya Muller" />
                     </View>
                 </View>
             </View>
 
 
             {/* ------- Next Button ---------*/}
-            <View>
-                <Pressable style={styles.nextButton}>
-                    <Text style={styles.nextText}>NEXT</Text>
-                </Pressable>
-            </View>
+            {/* <View>
+                    <Pressable style={styles.nextButton}>
+                        <Text style={styles.nextText}>NEXT</Text>
+                    </Pressable>
+                </View> */}
             <TabNavigation />
+
         </>
     )
 }
@@ -55,37 +77,46 @@ export default ClaimHistoryDetails;
 
 const styles = StyleSheet.create({
     // form
-    form:{
-        flexDirection:'column',
+    form: {
+        flexDirection: 'column',
     },
-    formItem:{
-        flexDirection:'column'
+    formItem: {
+        flexDirection: 'column',
+        marginHorizontal: 40,
     },
-    formLabel:{
+    formLabel: {
+        fontFamily: FontFamily.interBold,
+        fontSize: 15,
+        color: '#000000',
+        fontWeight: '700',
+        padding: 7,
+    },
+    formControl: {
+        borderWidth: 1,
+        padding: 8,
+        borderColor: '#016DAB',
+        borderRadius: 8,
+        paddingHorizontal: 17,
+    },
 
-    },
-    formControl:{
-        borderWidth:1,
-        padding:10,
-        margin:10,
-
-    },
     // button
     nextBtn: {
         width: 8,
         height: 12,
     },
     claimTitle: {
-        fontSize: 17,
-        fontWeight: '600',
-        color: 'black',
+        fontSize: 16,
+        fontFamily: FontFamily.bodyMain,
+        fontWeight: '500',
+        color: '#555555',
         textAlign: 'center',
     },
     claiminfo: {
-        fontSize: 10,
+        fontSize: 11,
+        fontFamily: FontFamily.bodyMain,
         paddingVertical: 2,
-        color: 'grey',
-        fontWeight: '600',
+        color: '#ABABAB',
+        fontWeight: '500',
         textAlign: 'center',
     },
     claimsList: {

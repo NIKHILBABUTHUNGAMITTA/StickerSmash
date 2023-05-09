@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core';
 import React from 'react';
-import { View, Text, Pressable, Image, StyleSheet } from 'react-native';
+import { View, Text, Pressable, Image, StyleSheet, ScrollView } from 'react-native';
 import { FontFamily, FontSize } from '../GlobalStyles';
 import TabNavigation from './TabNavigation';
 
@@ -10,8 +10,9 @@ const PolicyInformation = () => {
 
     return (
         <>
-            <View style={styles.container}>
-                <View style={{ backgroundColor: "whitesmoke", padding: 20, marginBottom: 7, }}></View>
+            <ScrollView style={styles.container}>
+
+                <View style={{ backgroundColor: "#f1f1f1", padding: 20, marginBottom: 7, }}></View>
 
                 {/* ------- Three icons on top ------  */}
                 <View style={styles.groupIcons}>
@@ -119,7 +120,7 @@ const PolicyInformation = () => {
                         </View>
                     </View>
                 </View>
-            </View>
+            </ScrollView>
             <TabNavigation />
         </>
     )
@@ -129,10 +130,10 @@ export default PolicyInformation
 
 
 const styles = StyleSheet.create({
-    backbutton : {
-        width : 45,
-        height : 20,
-        marginHorizontal:10,
+    backbutton: {
+        width: 45,
+        height: 20,
+        marginHorizontal: 10,
         tintColor: 'black',
     },
     policyItem2: {
