@@ -105,7 +105,7 @@ const Login = () => {
           {/* <View style={{ flex: 0.4, backgroundColor: "white" }} ></View> */}
 
           {/* ------------- Logo image above the login input form ------------- */}
-          <View style={{ flex: 4.5, backgroundColor: "white" }} >
+          <View style={{ flex: 4.5, backgroundColor: "#f1f1f1" }} >
             <Image style={logoDimension} source={logos[logoIndex]} />
           </View>
 

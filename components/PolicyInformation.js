@@ -31,7 +31,7 @@ const PolicyInformation = () => {
 
                 <View>
                     <Pressable onPress={() => navigation.navigate("Dashboard")}>
-                        <Image source={require("../assets/assets/vector.png")} style={styles.backbutton} />
+                        <Image source={require("../assets/assets/group.png")} style={styles.backbutton} />
                     </Pressable>
                 </View>
 
@@ -130,9 +130,10 @@ export default PolicyInformation
 
 const styles = StyleSheet.create({
     backbutton : {
-        width : 24,
-        height : 15,
-        marginHorizontal:30,
+        width : 45,
+        height : 20,
+        marginHorizontal:10,
+        tintColor: 'black',
     },
     policyItem2: {
         flexDirection: 'row',
