@@ -1,13 +1,17 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { View, Text, Pressable, Image, StyleSheet } from 'react-native';
 import { FontFamily, FontSize } from '../GlobalStyles';
 import TabNavigation from './TabNavigation';
 
 const PolicyInformation = () => {
+    //usenavigation
+    const navigation = useNavigation();
+
     return (
         <>
             <View style={styles.container}>
-                <View style={{ backgroundColor: "black", padding: 20, marginBottom: 7, }}></View>
+                <View style={{ backgroundColor: "whitesmoke", padding: 20, marginBottom: 7, }}></View>
 
                 {/* ------- Three icons on top ------  */}
                 <View style={styles.groupIcons}>
@@ -24,6 +28,14 @@ const PolicyInformation = () => {
                         source={require('../assets/assets/group-28-3.png')}
                     />
                 </View>
+
+                <View>
+                    <Pressable onPress={() => navigation.navigate("Dashboard")}>
+                        <Image source={require("../assets/assets/vector.png")} style={styles.backbutton} />
+                    </Pressable>
+                </View>
+
+                {/* ----- arya mullar image -------- */}
                 <View style={styles.userImage}>
                     <Image
                         style={styles.userLogo}
@@ -117,6 +129,11 @@ export default PolicyInformation
 
 
 const styles = StyleSheet.create({
+    backbutton : {
+        width : 24,
+        height : 15,
+        marginHorizontal:30,
+    },
     policyItem2: {
         flexDirection: 'row',
         justifyContent: 'flex-start',

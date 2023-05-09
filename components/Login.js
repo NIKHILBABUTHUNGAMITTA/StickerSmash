@@ -101,7 +101,7 @@ const Login = () => {
 
         <View style={[styles.containerLogin, { flexDirection: "column" }]}>
           {/* ----------- tab space for highlighting signal,wifi and notifications ------------ */}
-          <View style={{ flex: 0.4, backgroundColor: "black" }} ></View>
+          {/* <View style={{ flex: 0.4, backgroundColor: "white" }} ></View> */}
 
           {/* ------------- Logo image above the login input form ------------- */}
           <View style={{ flex: 4.5, backgroundColor: "white" }} >

@@ -11,7 +11,7 @@ const Dashboard = () => {
     return (
         <>
             <ScrollView style={styles.container}>
-                <View style={{ backgroundColor: "black", padding: 20, marginBottom: 3, }}></View>
+                <View style={{ backgroundColor: "whitesmoke", padding: 20, marginBottom: 3, }}></View>
                 {/* ----- bell logo with action -------- */}
                 <View style={styles.innerHeader}>
                     <Text style={styles.welcomeBack}>Welcome back,
