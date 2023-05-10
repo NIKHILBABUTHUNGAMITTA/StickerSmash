@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     backbutton: {
         width: 30,
         height: 30,
-        marginHorizontal: 20,
+        marginHorizontal: 30,
         tintColor: 'black',
         borderWidth: 2,
         borderColor: 'black',
@@ -200,7 +200,7 @@ const styles = StyleSheet.create({
         margin: 8,
     },
     userImage: {
-        marginTop: 20,
+        marginTop: 5,
         alignSelf: 'center'
     },
     userLogo: {

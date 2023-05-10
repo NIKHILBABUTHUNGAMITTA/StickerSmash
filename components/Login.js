@@ -252,7 +252,7 @@ const styles = StyleSheet.create({
   },
 
   loginBtn: {
-    backgroundColor: 'darkblue',
+    backgroundColor: '#016DAB',
     borderRadius: 20,
     width: 120,
     margin: 3,

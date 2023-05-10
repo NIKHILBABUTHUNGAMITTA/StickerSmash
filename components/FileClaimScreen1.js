@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/core';
 import React, { useState } from 'react'
 import TabNavigation from './TabNavigation';
-import { View, Text, StyleSheet, Pressable, Image, TextInput, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Pressable, Image, TextInput, ScrollView, Keyboard } from 'react-native';
 import { FontFamily, FontSize } from '../GlobalStyles';
 import CheckBox from 'expo-checkbox';
 
@@ -29,7 +29,7 @@ const FileClaimScreen1 = () => {
 
                 {/* -----Claim details in form ----- */}
 
-                <ScrollView style={styles.form}>
+                <ScrollView style={styles.form} onPress={Keyboard.dismiss}>
                     <Text style={[styles.formItem, styles.formheaders]}>1.Tell Us About You and Your Pet </Text>
                     <View style={styles.formItem}>
                         <Text style={styles.formLabel}>Policy Number<Text style={{ color: "#F81919" }}> *</Text></Text>
@@ -47,7 +47,7 @@ const FileClaimScreen1 = () => {
                     </View>
 
                     <View style={styles.formItem}>
-                        <Text style={styles.formLabel}>2. Reason for VET Visiting<Text style={{ color: "#F81919" }}> *</Text></Text>
+                        <Text style={[styles.formLabel,styles.formheaders]}>2. Reason for VET Visiting<Text style={{ color: "#F81919" }}> *</Text></Text>
 
                         {/* --- row1---- */}
                         <View style={styles.checkboxes}>
@@ -57,7 +57,7 @@ const FileClaimScreen1 = () => {
                                     value={isChecked} onValueChange={setChecked} />
                                 <Text style={styles.label}>Preventive visit</Text>
                             </View>
-                            <View style={styles.checkboxContainer}>
+                            <View style={[styles.checkboxContainer,{marginLeft:64}]}>
                                 <CheckBox
                                     style={styles.checkbox} color={isChecked ? 'grey' : undefined}
                                     value={isChecked} onValueChange={setChecked} />
@@ -71,13 +71,13 @@ const FileClaimScreen1 = () => {
                                 <CheckBox
                                     style={styles.checkbox} color={isChecked ? 'grey' : undefined}
                                     value={isChecked} onValueChange={setChecked} />
-                                <Text style={styles.label}>Preventive visit</Text>
+                                <Text style={styles.label}>Vomiting/upset stomach</Text>
                             </View>
-                            <View style={styles.checkboxContainer}>
+                            <View style={[styles.checkboxContainer,{marginLeft:10}]}>
                                 <CheckBox
                                     style={styles.checkbox} color={isChecked ? 'grey' : undefined}
                                     value={isChecked} onValueChange={setChecked} />
-                                <Text style={styles.label}>Skin allergies</Text>
+                                <Text style={styles.label}>Skin infection</Text>
                             </View>
                         </View>
 
@@ -87,13 +87,13 @@ const FileClaimScreen1 = () => {
                                 <CheckBox
                                     style={styles.checkbox} color={isChecked ? 'grey' : undefined}
                                     value={isChecked} onValueChange={setChecked} />
-                                <Text style={styles.label}>Preventive visit</Text>
+                                <Text style={styles.label}>Ear infection</Text>
                             </View>
-                            <View style={styles.checkboxContainer}>
+                            <View style={[styles.checkboxContainer,{marginLeft:80}]}>
                                 <CheckBox
                                     style={styles.checkbox} color={isChecked ? 'grey' : undefined}
                                     value={isChecked} onValueChange={setChecked} />
-                                <Text style={styles.label}>Skin allergies</Text>
+                                <Text style={styles.label}>Arthritis</Text>
                             </View>
                         </View>
 
@@ -103,28 +103,31 @@ const FileClaimScreen1 = () => {
                                 <CheckBox
                                     style={styles.checkbox} color={isChecked ? 'grey' : undefined}
                                     value={isChecked} onValueChange={setChecked} />
-                                <Text style={styles.label}>Preventive visit</Text>
+                                <Text style={styles.label}>Other (Please Specify)</Text>
                             </View>
                         </View>
 
 
-                        <TextInput multiline={true} numberOfLines={3} style={styles.formControl} placeholder="SHIRO" />
+                        <TextInput multiline={true} maxLength={2000}
+                            style={[styles.formControl, { height:86, textAlignVertical: 'top', justifyContent: 'flex-start',marginVertical:3,}]}
+                            placeholder="Enter details maximum of 2000 characters are allowed" />
                     </View>
 
                     <View style={styles.formItem}>
                         <Text style={styles.formLabel}>Name of body part <Text style={{ color: "#F81919" }}> *</Text></Text>
-                        <TextInput style={styles.formControl} placeholder="Arya Muller" />
+                        <TextInput style={styles.formControl} placeholder="Enter the effected body part" />
+                    </View>
+                    <View>
+                        <Pressable style={styles.nextButton} onPress={() => navigation.navigate("FileClaimScreen2")}>
+                            <Text style={styles.nextText}>NEXT</Text>
+                        </Pressable>
                     </View>
                 </ScrollView>
             </View>
 
 
             {/* ------- Next Button ---------*/}
-            <View>
-                <Pressable style={styles.nextButton} onPress={() => navigation.navigate("FileClaimScreen2")}>
-                    <Text style={styles.nextText}>NEXT</Text>
-                </Pressable>
-            </View>
+
             <TabNavigation />
 
         </>
@@ -139,42 +142,44 @@ const styles = StyleSheet.create({
     //label
     checkboxContainer: {
         flexDirection: 'row',
-        marginBottom: 5,
+        marginVertical: 4,
     },
     checkboxes: {
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
         flexDirection: 'row',
     },
     checkbox: {
         alignSelf: 'center',
         width: 17,
         height: 17,
-        marginLeft:5,
+        marginLeft: 3,
     },
     label: {
-        marginHorizontal: 8,
-
+        marginHorizontal: 5,
+        fontFamily: FontFamily.interSemibold,
+        fontSize: 12,
     },
 
     // form
     formheaders: {
         fontSize: 12,
-        FontFamily: FontFamily.interBold,
-        fontWeight: "600",
+        fontFamily: FontFamily.interSemibold,
+        fontWeight: "500",
         color: "grey",
-        paddingHorizontal: 10,
+        paddingHorizontal: 5,
+        marginTop:10,
     },
 
     form: {
         flexDirection: 'column',
     },
     formItem: {
-        flexDirection: 'column',
+        // flexDirection: 'column',
         marginHorizontal: 40,
-        marginVertical: 7,
+        marginVertical: 3,
     },
     formLabel: {
-        fontFamily: FontFamily.interBold,
+        fontFamily: FontFamily.interSemibold,
         fontSize: 12,
         color: '#000000',
         fontWeight: '500',
@@ -183,20 +188,21 @@ const styles = StyleSheet.create({
     },
     formControl: {
         borderWidth: 1,
-        padding: 6,
+        padding: 5,
         borderColor: '#016DAB',
         borderRadius: 8,
-        paddingHorizontal: 15,
-        fontSize: 14,
-        fontFamily: FontFamily.interBold,
-        justifyContent:'flex-start',
+        paddingHorizontal: 12,
+        fontSize: 13,
+        fontFamily: FontFamily.interSemibold,
+        justifyContent: 'flex-start',
     },
 
     nextButton: {
-        backgroundColor: "#196cbf",
+        backgroundColor: "#016DAB",
         justifyContent: 'center',
         padding: 15,
-        margin: 40,
+        marginHorizontal: 40,
+        marginVertical:30,
         borderRadius: 15,
     },
     nextText: {
@@ -217,8 +223,8 @@ const styles = StyleSheet.create({
     backbutton: {
         width: 30,
         height: 30,
-        marginHorizontal: 20,
-        marginVertical: 10,
+        marginHorizontal: 30,
+        marginBottom: 15,
         tintColor: 'black',
         borderWidth: 2,
         borderColor: 'black',
