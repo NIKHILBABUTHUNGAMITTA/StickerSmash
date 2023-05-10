@@ -131,10 +131,13 @@ export default PolicyInformation
 
 const styles = StyleSheet.create({
     backbutton: {
-        width: 45,
-        height: 20,
-        marginHorizontal: 10,
+        width: 30,
+        height: 30,
+        marginHorizontal: 20,
         tintColor: 'black',
+        borderWidth: 2,
+        borderColor: 'black',
+        borderRadius: 30,
     },
     policyItem2: {
         flexDirection: 'row',

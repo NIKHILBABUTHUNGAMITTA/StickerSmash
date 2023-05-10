@@ -8,7 +8,7 @@ import TabNavigation from './TabNavigation';
 const ClaimHistory = () => {
   const navigation = useNavigation();
   const [value, setValue] = useState(["sridhar"]);
-
+  
   return (
     <>
       {

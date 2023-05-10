@@ -8,7 +8,6 @@ const ClaimHistoryDetails = () => {
     const navigation = useNavigation();
     return (
         <>
-
             <View style={styles.container}>
                 <View style={{ backgroundColor: "#f1f1f1", padding: 20, marginBottom: 7, }}></View>
 
@@ -34,27 +33,27 @@ const ClaimHistoryDetails = () => {
                 <View style={styles.form}>
                     <View style={styles.formItem}>
                         <Text style={styles.formLabel}>Claim Amount</Text>
-                        <TextInput style={styles.formControl} placeholder="$750" />
+                        <Text style={styles.formControl} placeholder="" >$750</Text>
                     </View>
 
                     <View style={styles.formItem}>
                         <Text style={styles.formLabel}>Claim Date</Text>
-                        <TextInput style={styles.formControl} placeholder="DD-MM-YYYY" />
+                        <Text style={styles.formControl} placeholder="">DD-MM-YYYY</Text>
                     </View>
 
                     <View style={styles.formItem}>
                         <Text style={styles.formLabel}>Policy Number</Text>
-                        <TextInput style={styles.formControl} placeholder="XX-XX-XX-XX" />
+                        <Text style={styles.formControl} placeholder="" >XX-XX-XX-XX</Text>
                     </View>
 
                     <View style={styles.formItem}>
                         <Text style={styles.formLabel}>Pet Name</Text>
-                        <TextInput style={styles.formControl} placeholder="SHIRO" />
+                        <Text style={styles.formControl} placeholder="SHIRO" >SHIRO</Text>
                     </View>
 
                     <View style={styles.formItem}>
                         <Text style={styles.formLabel}>Policy Holder Name</Text>
-                        <TextInput style={styles.formControl} placeholder="Arya Muller" />
+                        <Text style={styles.formControl} placeholder="Arya Muller" >Arya Muller</Text>
                     </View>
                 </View>
             </View>

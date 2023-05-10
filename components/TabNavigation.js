@@ -25,7 +25,7 @@ const TabNavigation = () => {
             </Pressable>
 
             {/* ---- File a Claim----- */}
-            <Pressable onPress={() => alert("File Claim is clicked")}>
+            <Pressable onPress={() => navigation.navigate("FileClaimScreen1")}>
                 <View style={styles.innerIcons}>
                     <Image resizeMode={'cover'} source={require('../assets/assets/2-316017.png')} style={styles.logo} />
                     <Text style={styles.logoText}>File Claim</Text>

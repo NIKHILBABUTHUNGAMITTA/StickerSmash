@@ -1,4 +1,4 @@
-import { StyleSheet, View, Image, TouchableWithoutFeedback, Text, Pressable, TextInput, Keyboard, TouchableOpacity, useWindowDimensions, ScrollView } from "react-native";
+import { StyleSheet, View, Image, Text, Pressable, TextInput, Keyboard, TouchableOpacity, useWindowDimensions, ScrollView } from "react-native";
 import React, { useEffect, useState } from 'react';
 import logo5 from '../assets/LogoOne.png';
 import { Ionicons } from '@expo/vector-icons';
@@ -22,8 +22,8 @@ const Login = () => {
   const [logoDimension, setLogoDimension] = useState({
     width: width,
     height: width,
-    borderBottomLeftRadius: 3 * width,
-    borderBottomRightRadius: 3 * width,
+    borderBottomLeftRadius: 2*height,
+    borderBottomRightRadius: 2*height,
     resizeMode: 'cover',
   })
 
@@ -87,8 +87,8 @@ const Login = () => {
     setLogoDimension({
       width: width,
       height: width,
-      borderBottomLeftRadius: 3 * width,
-      borderBottomRightRadius: 3 * width,
+      borderBottomLeftRadius: 2*height,
+      borderBottomRightRadius: 2*height,
       resizeMode: 'cover',
     })
   }, [toggleBt, toggleStyle, showPassword, password, width])
@@ -242,6 +242,7 @@ const styles = StyleSheet.create({
 
   noBorder: {
     borderWidth: 0,
+    backgroundColor: "#EDF1F4",
   },
 
   label: {
