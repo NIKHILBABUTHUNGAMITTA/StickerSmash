@@ -33,7 +33,7 @@ const MyAccount = () => {
                             </View>
                         </Pressable>
 
-                        {/* second option  */}
+                        {/* --- second option---  */}
                         <Pressable style={styles.clickOption} onPress={() => alert("Additional Coverage")}>
                             <View style={styles.blurBg}>
                                 <Octicons name="shield-check" size={19} color="#0601B4" />
