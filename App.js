@@ -18,6 +18,8 @@ import FileClaimScreen1 from './components/FileClaimScreen1';
 import FileClaimScreen2 from './components/FileClaimScreen2';
 import FileClaimScreen3 from './components/FileClaimScreen3';
 import Servicing from './components/Servicing';
+import OwnerShipScreen1 from './components/OwnerShipScreen1';
+import OwnerShipScreen2 from './components/OwnerShipScreen2';
 
 const Stack = createNativeStackNavigator();
 
@@ -68,8 +70,7 @@ export default class App extends React.Component {
 
           <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-
-              <Stack.Screen name='Login' component={Login} />
+             <Stack.Screen name='Login' component={Login} />
               <Stack.Screen name='Dashboard' component={Dashboard} />
               <Stack.Screen name='PolicyInformation' component={PolicyInformation} />
               <Stack.Screen name="ClaimHistory" component={ClaimHistory} />
@@ -79,6 +80,8 @@ export default class App extends React.Component {
               <Stack.Screen name='FileClaimScreen2' component={FileClaimScreen2} />
               <Stack.Screen name='FileClaimScreen3' component={FileClaimScreen3} />
               <Stack.Screen name="Servicing" component={Servicing} />
+              <Stack.Screen name='OwnerShipScreen1' component={OwnerShipScreen1}/>
+              <Stack.Screen name='OwnerShipScreen2' component={OwnerShipScreen2}/>
             </Stack.Navigator>
           </NavigationContainer>
           <StatusBar style="auto" />
