@@ -7,7 +7,7 @@ import TabNavigation from './TabNavigation';
 
 const ClaimHistory = () => {
   const navigation = useNavigation();
-  const [value, setValue] = useState(["sridhar"]);
+  const [value, setValue] = useState(["d"]);
   
   return (
     <>
@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
   nextBtn: {
     width: 8,
     height: 12,
-
   },
   claimTitle: {
     fontSize: 16,
@@ -126,13 +125,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   backbutton: {
-    width: 30,
-    height: 30,
+    width: 35,
+    height: 40,
     marginHorizontal: 20,
-    marginVertical: 10,
+    marginVertical: 5,
     tintColor: 'black',
-    borderWidth: 2,
-    borderColor: 'black',
-    borderRadius: 30,
+    // borderWidth: 2,
+    // borderColor: 'black',
+    // borderRadius: 30,
   },
 })

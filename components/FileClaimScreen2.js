@@ -37,7 +37,7 @@ const FileClaimScreen2 = () => {
                     </Pressable>
                 </View>
 
-        
+
                 {/* -----Claim details in form ----- */}
 
                 <Pressable style={styles.form} onPress={Keyboard.dismiss}>
@@ -141,11 +141,11 @@ const styles = StyleSheet.create({
         marginVertical: 5,
     },
     label: {
-        marginHorizontal:10,
-        marginVertical:2,
+        marginHorizontal: 10,
+        marginVertical: 2,
         fontFamily: FontFamily.interMedium,
         fontSize: 11,
-        textAlign: 'justify', 
+        textAlign: 'justify',
         lineHeight: 15
     },
 
@@ -200,13 +200,10 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     backbutton: {
-        width: 30,
-        height: 30,
-        marginHorizontal: 30,
-        marginBottom: 15,
+        width: 35,
+        height: 40,
+        marginHorizontal: 20,
+        marginVertical: 5,
         tintColor: 'black',
-        borderWidth: 2,
-        borderColor: 'black',
-        borderRadius: 30,
     },
 })

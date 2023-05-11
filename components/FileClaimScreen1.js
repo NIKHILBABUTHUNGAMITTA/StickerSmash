@@ -47,7 +47,7 @@ const FileClaimScreen1 = () => {
                     </View>
 
                     <View style={styles.formItem}>
-                        <Text style={[styles.formLabel,styles.formheaders]}>2. Reason for VET Visiting<Text style={{ color: "#F81919" }}> *</Text></Text>
+                        <Text style={[styles.formLabel, styles.formheaders]}>2. Reason for VET Visiting<Text style={{ color: "#F81919" }}> *</Text></Text>
 
                         {/* --- row1---- */}
                         <View style={styles.checkboxes}>
@@ -57,7 +57,7 @@ const FileClaimScreen1 = () => {
                                     value={isChecked} onValueChange={setChecked} />
                                 <Text style={styles.label}>Preventive visit</Text>
                             </View>
-                            <View style={[styles.checkboxContainer,{marginLeft:64}]}>
+                            <View style={[styles.checkboxContainer, { marginLeft: 64 }]}>
                                 <CheckBox
                                     style={styles.checkbox} color={isChecked ? 'grey' : undefined}
                                     value={isChecked} onValueChange={setChecked} />
@@ -73,10 +73,10 @@ const FileClaimScreen1 = () => {
                                     value={isChecked} onValueChange={setChecked} />
                                 <Text style={styles.label}>Vomiting/upset stomach</Text>
                             </View>
-                            <View style={[styles.checkboxContainer,{marginLeft:10}]}>
+                            <View style={[styles.checkboxContainer, { marginLeft: 10 }]}>
                                 <CheckBox
                                     style={styles.checkbox} color={isChecked ? 'grey' : undefined}
-                                    value={isChecked} onValueChange={setChecked} />
+                                    value={isChecked} />
                                 <Text style={styles.label}>Skin infection</Text>
                             </View>
                         </View>
@@ -89,7 +89,7 @@ const FileClaimScreen1 = () => {
                                     value={isChecked} onValueChange={setChecked} />
                                 <Text style={styles.label}>Ear infection</Text>
                             </View>
-                            <View style={[styles.checkboxContainer,{marginLeft:80}]}>
+                            <View style={[styles.checkboxContainer, { marginLeft: 80 }]}>
                                 <CheckBox
                                     style={styles.checkbox} color={isChecked ? 'grey' : undefined}
                                     value={isChecked} onValueChange={setChecked} />
@@ -109,7 +109,7 @@ const FileClaimScreen1 = () => {
 
 
                         <TextInput multiline={true} maxLength={2000}
-                            style={[styles.formControl, { height:86, textAlignVertical: 'top', justifyContent: 'flex-start',marginVertical:3,}]}
+                            style={[styles.formControl, { height: 86, textAlignVertical: 'top', justifyContent: 'flex-start', marginVertical: 3, }]}
                             placeholder="Enter details maximum of 2000 characters are allowed" />
                     </View>
 
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
         fontWeight: "500",
         color: "grey",
         paddingHorizontal: 5,
-        marginTop:10,
+        marginTop: 10,
     },
 
     form: {
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 15,
         marginHorizontal: 40,
-        marginVertical:30,
+        marginVertical: 30,
         borderRadius: 15,
     },
     nextText: {
@@ -221,13 +221,10 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     backbutton: {
-        width: 30,
-        height: 30,
-        marginHorizontal: 30,
-        marginBottom: 15,
+        width: 35,
+        height: 40,
+        marginHorizontal: 20,
+        marginBottom: 5,
         tintColor: 'black',
-        borderWidth: 2,
-        borderColor: 'black',
-        borderRadius: 30,
     },
 })

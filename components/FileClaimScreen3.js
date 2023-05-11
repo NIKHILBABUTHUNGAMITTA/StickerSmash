@@ -63,14 +63,11 @@ const styles = StyleSheet.create({
         fontWeight: '700',
     },
     backbutton: {
-        width: 30,
-        height: 30,
-        marginHorizontal: 30,
-        marginBottom: 15,
+        width: 35,
+        height: 40,
+        marginBottom:5,
+        marginHorizontal: 20,
         tintColor: 'black',
-        borderWidth: 2,
-        borderColor: 'black',
-        borderRadius: 30,
     },
     image34: {
         alignSelf: 'center',

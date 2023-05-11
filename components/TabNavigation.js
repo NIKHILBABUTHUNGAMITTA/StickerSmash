@@ -17,7 +17,7 @@ const TabNavigation = () => {
             </Pressable>
 
             {/* ---- Servicing----- */}
-            <Pressable onPress={() => alert("Servicing is clicked")}>
+            <Pressable onPress={() => navigation.navigate("Servicing")}>
                 <View style={styles.innerIcons}>
                     <Image resizeMode={'cover'} source={require('../assets/assets/1-1.png')} style={styles.logo} />
                     <Text style={styles.logoText}>Servicing</Text>

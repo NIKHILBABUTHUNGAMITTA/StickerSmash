@@ -131,13 +131,10 @@ export default PolicyInformation
 
 const styles = StyleSheet.create({
     backbutton: {
-        width: 30,
-        height: 30,
-        marginHorizontal: 30,
+        width: 35,
+        height: 40,
+        marginHorizontal: 20,
         tintColor: 'black',
-        borderWidth: 2,
-        borderColor: 'black',
-        borderRadius: 30,
     },
     policyItem2: {
         flexDirection: 'row',
@@ -200,7 +197,6 @@ const styles = StyleSheet.create({
         margin: 8,
     },
     userImage: {
-        marginTop: 5,
         alignSelf: 'center'
     },
     userLogo: {

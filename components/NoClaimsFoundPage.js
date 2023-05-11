@@ -178,13 +178,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   backbutton: {
-    width: 30,
-    height: 30,
+    width: 35,
+    height: 40,
     marginHorizontal: 20,
-    marginVertical: 10,
-    tintColor: "black",
-    borderWidth: 2,
-    borderColor: "black",
-    borderRadius: 30,
+    marginVertical: 5,
+    tintColor: 'black',
   },
 });
