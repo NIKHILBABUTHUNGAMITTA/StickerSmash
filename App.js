@@ -69,7 +69,7 @@ export default class App extends React.Component {
 
           <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
-              <Stack.Screen name="MyAccount" component={MyAccount} />
+              
               <Stack.Screen name='Login' component={Login} />
               <Stack.Screen name='Dashboard' component={Dashboard} />
               <Stack.Screen name='PolicyInformation' component={PolicyInformation} />
@@ -80,7 +80,7 @@ export default class App extends React.Component {
               <Stack.Screen name='FileClaimScreen2' component={FileClaimScreen2} />
               <Stack.Screen name='FileClaimScreen3' component={FileClaimScreen3} />
               <Stack.Screen name="Servicing" component={Servicing} />
-
+              <Stack.Screen name="MyAccount" component={MyAccount} />
             </Stack.Navigator>
           </NavigationContainer>
           <StatusBar style="auto" />
