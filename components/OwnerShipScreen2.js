@@ -46,7 +46,7 @@ const OwnerShipScreen2 = () => {
     )
 }
 
-export default OwnerShipScreen2
+export default OwnerShipScreen2;
 
 const styles = StyleSheet.create({
     container: {
