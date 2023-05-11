@@ -60,7 +60,7 @@ const Servicing = () => {
                             </Pressable>
 
                             {/* third option */}
-                            <Pressable style={styles.clickOption} onPress={() => alert("Change Ownership")}>
+                            <Pressable style={styles.clickOption} onPress={() => navigation.navigate("OwnerShipScreen1")}>
                                 <View style={styles.blurBg}>
                                     <Octicons name="shield-check" size={19} color="#0601B4" />
                                 </View>
