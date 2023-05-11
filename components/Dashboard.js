@@ -35,7 +35,7 @@ const Dashboard = () => {
 
                     {/* ------- My account ---------- */}
                     <View style={styles.menuItem}>
-                        <Pressable style={[styles.menuInnerItem, { backgroundColor: "#c0faf7" }]} onPress={() => alert("My account is clicked")}>
+                        <Pressable style={[styles.menuInnerItem, { backgroundColor: "#c0faf7" }]} onPress={() => navigation.navigate("MyAccount")}>
                             <View style={styles.userprofile256Bg}>
                                 <Image style={styles.userprofile256} source={require("../assets/assets/userprofile256-1.png")} />
                             </View>
