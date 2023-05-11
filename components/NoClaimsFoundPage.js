@@ -29,7 +29,7 @@ const NoClaimsFoundPage = () => {
 
             {/* ----- back button ------ */}
             <View>
-              <Pressable onPress={() => navigation.navigate("Dashboard")}>
+              <Pressable style={{width:60,marginLeft:15,}} onPress={() => navigation.navigate("Dashboard")}>
                 <Image source={require("../assets/assets/group.png")} style={styles.backbutton} />
               </Pressable>
             </View>
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
   backbutton: {
     width: 35,
     height: 40,
-    marginHorizontal: 20,
+    marginHorizontal: 5,
     marginVertical: 5,
     tintColor: 'black',
   },

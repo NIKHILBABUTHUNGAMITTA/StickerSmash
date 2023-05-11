@@ -18,7 +18,7 @@ const FileClaimScreen3 = () => {
 
                 {/* ----- back button ------ */}
                 <View>
-                    <Pressable onPress={() => navigation.navigate("FileClaimScreen2")}>
+                    <Pressable style={{width:50,marginLeft:15,}} onPress={() => navigation.navigate("FileClaimScreen2")}>
                         <Image source={require("../assets/assets/group.png")} style={styles.backbutton} />
                     </Pressable>
                 </View>
@@ -31,18 +31,19 @@ const FileClaimScreen3 = () => {
                         source={require("../assets/assets/image-34.png")}
                     />
                 </View>
-                <View style={{ marginLeft: 24 }}>
+                <View style={{ marginLeft: 25 }}>
                     <Text style={styles.header1}>Your claim has been submitted successfully. </Text>
                     <Text style={styles.header2}>Reference Number :
                         <Text style={styles.header3}> 0016483261931</Text>
                     </Text>
                     <Text style={styles.header4}>Expect response in next 48 hours.</Text>
                 </View>
-                <View>
+
+                {/* <View>
                     <Pressable style={styles.nextButton} onPress={() => navigation.navigate("ClaimHistory")}>
                         <Text style={styles.nextText}>DONE</Text>
                     </Pressable>
-                </View>
+                </View> */}
             </View>
 
             <TabNavigation />
@@ -66,7 +67,7 @@ const styles = StyleSheet.create({
         width: 35,
         height: 40,
         marginBottom:5,
-        marginHorizontal: 20,
+        marginHorizontal: 5,
         tintColor: 'black',
     },
     image34: {
@@ -78,20 +79,20 @@ const styles = StyleSheet.create({
     },
     header1: {
         fontFamily: FontFamily.interSemibold,
-        fontSize: 16,
+        fontSize: 15,
         fontWeight: '500',
         paddingTop: 40,
     },
     header2: {
         fontFamily: FontFamily.interSemibold,
-        fontSize: 16,
+        fontSize: 15,
         fontWeight: '500',
         color: "#868686",
-        paddingVertical: 15,
+        paddingVertical: 13,
     },
     header3: {
         fontFamily: FontFamily.interSemibold,
-        fontSize: 16,
+        fontSize: 15,
         fontWeight: '500',
         color: "#000000"
     },

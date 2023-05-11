@@ -22,7 +22,7 @@ const OwnerShipScreen1 = () => {
 
                 {/* ----- back button ------ */}
                 <View>
-                    <Pressable onPress={() => navigation.navigate("Dashboard")}>
+                    <Pressable style={{width:50,marginLeft:15}} onPress={() => navigation.navigate("Servicing")}>
                         <Image source={require("../assets/assets/group.png")} style={styles.backbutton} />
                     </Pressable>
                 </View>
@@ -64,12 +64,12 @@ const OwnerShipScreen1 = () => {
                     <View style={styles.formItem}>
                     <Text style={styles.formLabel}>Address<Text style={{ color: "#F81919" }}> *</Text></Text>
                          <TextInput multiline={true} maxLength={2000}
-                            style={[styles.formControl, { height: 86, textAlignVertical: 'top', justifyContent: 'flex-start', marginVertical: 3, }]}
+                            style={[styles.formControl, { height: 86, textAlignVertical: 'top', justifyContent: 'flex-start', }]}
                             placeholder="Enter your complete address " />
                     </View>
 
                     <View style={styles.formItem}>
-                        <Text style={styles.formLabel}>Phone Number <Text style={{ color: "#F81919" }}> *</Text></Text>
+                        <Text style={styles.formLabel}>Phone Number<Text style={{ color: "#F81919" }}> *</Text></Text>
                         <TextInput style={styles.formControl} placeholder="Enter your mobile number" />
                     </View>
                     <View style={styles.formItem}>
@@ -80,7 +80,7 @@ const OwnerShipScreen1 = () => {
                                     color={isChecked ? 'grey' : undefined}
                                     value={isChecked} onValueChange={setChecked} />
                             </View>
-                            <Text style={styles.label1}>{`I accept this transfer of ownership and request that Petlyf issue a new policy to me covering the pet referenced above, and accept financial responsibility for this policy when a new policy number and effective date are issued`} <Text style={{ color: "#F81919" }}> *</Text></Text>
+                            <Text style={styles.label1}>{`I accept this transfer of ownership and request that Petlyf issue a new policy to me covering the pet referenced above, and accept financial responsibility for this policy when a new policy number and effective date are issued`}</Text>
                         </View>
                     </View>
                     
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     //label
     checkboxContainer: {
         flexDirection: 'row',
-        marginVertical: 4,
+        marginVertical: 8,
     },
     checkboxes: {
         justifyContent: 'flex-start',
@@ -117,9 +117,9 @@ const styles = StyleSheet.create({
     },
     checkbox: {
         alignSelf: 'center',
-        width: 17,
-        height: 17,
-        marginLeft: 3,
+        width: 16,
+        height: 16,
+        margin: 5,
     },
     label: {
         marginHorizontal: 3,
@@ -167,9 +167,9 @@ const styles = StyleSheet.create({
     nextButton: {
         backgroundColor: "#016DAB",
         justifyContent: 'center',
-        padding: 15,
-        marginHorizontal: 40,
-        marginVertical: 30,
+        padding: 14,
+        marginHorizontal: 30,
+        marginBottom: 20,
         borderRadius: 15,
     },
     nextText: {
@@ -188,15 +188,15 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     backbutton: {
-        width: 35,
+        width: 30,
         height: 40,
-        marginHorizontal: 20,
+        marginHorizontal:10,
         marginBottom: 5,
         tintColor: 'black',
     },
     label1: {
-        marginHorizontal: 10,
-        marginVertical: 2,
+        marginHorizontal:7,
+        marginVertical: 3,
         fontFamily: FontFamily.interMedium,
         fontSize: 12,
         textAlign: 'justify',

@@ -32,7 +32,7 @@ const Servicing = () => {
                             {/* First option */}
                             <Pressable style={styles.clickOption} onPress={() => alert("Increase Coverage")}>
                                 <View style={styles.blurBg}>
-                                    <Octicons name="shield-check" size={19} color="#0601B4" />
+                                    <Octicons name="shield-check" size={19} color="#016DAB" />
                                 </View>
                                 <View style={styles.innerText}>
                                     <Text style={styles.firstheader}>Increase Coverage</Text>
@@ -47,7 +47,7 @@ const Servicing = () => {
                             {/* second option  */}
                             <Pressable style={styles.clickOption} onPress={() => alert("Additional Coverage")}>
                                 <View style={styles.blurBg}>
-                                    <Octicons name="shield-check" size={19} color="#0601B4" />
+                                    <Octicons name="shield-check" size={19} color="#016DAB" />
                                 </View>
                                 <View style={styles.innerText}>
                                     <Text style={styles.firstheader}>Additional Coverage</Text>
@@ -62,7 +62,7 @@ const Servicing = () => {
                             {/* third option */}
                             <Pressable style={styles.clickOption} onPress={() => navigation.navigate("OwnerShipScreen1")}>
                                 <View style={styles.blurBg}>
-                                    <Octicons name="shield-check" size={19} color="#0601B4" />
+                                    <Octicons name="shield-check" size={19} color="#016DAB" />
                                 </View>
                                 <View style={styles.innerText}>
                                     <Text style={styles.firstheader}>Change Ownership</Text>
@@ -77,7 +77,7 @@ const Servicing = () => {
                             {/* fourth option */}
                             <Pressable style={styles.clickOption} onPress={() => alert("Renew my Policy")}>
                                 <View style={styles.blurBg}>
-                                    <Octicons name="shield-check" size={19} color="#0601B4" />
+                                    <Octicons name="shield-check" size={19} color="#016DAB" />
                                 </View>
                                 <View style={styles.innerText}>
                                     <Text style={styles.firstheader}>Renew My Policy</Text>

@@ -32,7 +32,7 @@ const FileClaimScreen2 = () => {
 
                 {/* ----- back button ------ */}
                 <View>
-                    <Pressable onPress={() => navigation.navigate("FileClaimScreen1")}>
+                    <Pressable style={{width:55,marginLeft:16}} onPress={() => navigation.navigate("FileClaimScreen1")}>
                         <Image source={require("../assets/assets/group.png")} style={styles.backbutton} />
                     </Pressable>
                 </View>
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         marginVertical: 2,
         fontFamily: FontFamily.interMedium,
-        fontSize: 11,
+        fontSize: 12,
         textAlign: 'justify',
         lineHeight: 15
     },
@@ -202,7 +202,7 @@ const styles = StyleSheet.create({
     backbutton: {
         width: 35,
         height: 40,
-        marginHorizontal: 20,
+        marginHorizontal: 5,
         marginVertical: 5,
         tintColor: 'black',
     },

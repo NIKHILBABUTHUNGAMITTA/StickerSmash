@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Pressable, Image, } from 'react-native';
 import { FontFamily } from '../GlobalStyles';
 import TabNavigation from './TabNavigation';
-import { Ionicons, Octicons } from '@expo/vector-icons';
+import { FontAwesome, Fontisto, Ionicons, MaterialIcons, Octicons } from '@expo/vector-icons';
 
 const MyAccount = () => {
+    const [security, setSecurity] = useState(true);
     return (
         <>
             <View style={styles.container}>
@@ -18,14 +19,14 @@ const MyAccount = () => {
                         {/* First option */}
                         <Pressable style={styles.clickOption} onPress={() => alert("Increase Coverage")}>
                             <View style={styles.blurBg}>
-                                <Octicons name="shield-check" size={19} color="#0601B4" />
+                                <Octicons name="shield-check" size={19} color="#016DAB" />
                             </View>
                             <View style={styles.innerText}>
                                 <Text style={styles.firstheader}>Pet Owner</Text>
-                                <Text style={styles.secondheader}>Manage your sum assured</Text>
+                                <Text style={styles.secondheader}>{'Make changes to pet owner \naccount'}</Text>
                             </View>
                             <View style={styles.Option1}>
-                                <Ionicons name="ios-warning" size={20} color="red" />
+                                <Ionicons name="ios-warning" size={21} color="red" />
                                 <Image
                                     style={styles.nextBtn}
                                     source={require('../assets/assets/icon--light--month-chevron10.png')}
@@ -34,28 +35,36 @@ const MyAccount = () => {
                         </Pressable>
 
                         {/* --- second option---  */}
-                        <Pressable style={styles.clickOption} onPress={() => alert("Additional Coverage")}>
+                        <Pressable style={styles.clickOption}>
                             <View style={styles.blurBg}>
-                                <Octicons name="shield-check" size={19} color="#0601B4" />
+                                {/* <Ionicons name="lock-closed-outline" size={19} color="#016DAB" /> */}
+                                <MaterialIcons name="lock-outline" size={19} color="#016DAB" />
                             </View>
                             <View style={styles.innerText}>
-                                <Text style={styles.firstheader}>Additional Coverage</Text>
-                                <Text style={styles.secondheader}>Add-ins in policy</Text>
+                                <Text style={styles.firstheader}>Face ID / Touch ID</Text>
+                                <Text style={styles.secondheader}>Manage your device security</Text>
                             </View>
-                            <Image
+                            {
+                                security ?
+                                    <Fontisto onPress={() => setSecurity(!security)} style={{ marginHorizontal: 15, }} name="toggle-off" size={38} color="#ABABAB" />
+                                    :
+                                    <Fontisto onPress={() => setSecurity(!security)} style={{ marginHorizontal: 15, }} name="toggle-on" size={38} color="#016DAB" />
+                            }
+                            {/* <Image
                                 style={styles.nextBtn}
                                 source={require('../assets/assets/icon--light--month-chevron10.png')}
-                            />
+                            /> */}
                         </Pressable>
 
                         {/* third option */}
                         <Pressable style={styles.clickOption} onPress={() => alert("Change Ownership")}>
                             <View style={styles.blurBg}>
-                                <Octicons name="shield-check" size={19} color="#0601B4" />
+                                {/* <Octicons name="log-out-outline" size={19} color="#016DAB" /> */}
+                                <Ionicons name="log-out-outline" size={21} color="#016DAB" />
                             </View>
                             <View style={styles.innerText}>
-                                <Text style={styles.firstheader}>Change Ownership</Text>
-                                <Text style={styles.secondheader}>Change your Pet’s ownership</Text>
+                                <Text style={styles.firstheader}>Log out</Text>
+                                <Text style={styles.secondheader}>Further secure your account for safety</Text>
                             </View>
                             <Image
                                 style={styles.nextBtn}
@@ -66,11 +75,10 @@ const MyAccount = () => {
                         {/* fourth option */}
                         <Pressable style={styles.clickOption} onPress={() => alert("Renew my Policy")}>
                             <View style={styles.blurBg}>
-                                <Octicons name="shield-check" size={19} color="#0601B4" />
+                                <Fontisto name="heart-alt" size={17} color="#016DAB" />
                             </View>
                             <View style={styles.innerText}>
-                                <Text style={styles.firstheader}>Renew My Policy</Text>
-                                <Text style={styles.secondheader}>Policy renewal</Text>
+                                <Text style={[styles.firstheader, { marginVertical: 5, }]}>About App</Text>
                             </View>
                             <Image
                                 style={styles.nextBtn}
@@ -91,8 +99,8 @@ export default MyAccount
 const styles = StyleSheet.create({
 
     Option1: {
-        flexDirection:"row",
-        alignItems:'center',
+        flexDirection: "row",
+        alignItems: 'center',
     },
     container: {
         flex: 1,
@@ -110,7 +118,7 @@ const styles = StyleSheet.create({
         marginHorizontal: -5,
         marginVertical: 25,
         padding: 10,
-        height: 255,
+        height: 280,
         backgroundColor: '#FFFFFF',
         borderRadius: 35,
         shadowColor: 'black',
@@ -126,14 +134,15 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: 'center',
         justifyContent: "space-between",
-        margin: 6,
+        marginVertical: 9,
+        marginHorizontal: 6,
     },
     emoji: {
         tintColor: "#0601B4",
     },
     innerText: {
         flexDirection: "column",
-        marginVertical: 5,
+        marginVertical: 7,
         alignSelf: 'flex-start',
         paddingHorizontal: 60,
         position: 'absolute'
@@ -150,14 +159,13 @@ const styles = StyleSheet.create({
         fontSize: 13,
         fontWeight: "500",
         fontFamily: FontFamily.subHeadlineMain,
-        textAlign: 'left',
         color: "#181D27",
     },
     secondheader: {
         fontSize: 11,
         fontFamily: FontFamily.bodyMain,
         fontWeight: "400",
-        paddingVertical: 5,
+        paddingVertical: 3,
         color: "#ABABAB"
     },
     nextBtn: {

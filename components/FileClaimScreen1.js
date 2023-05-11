@@ -1,16 +1,32 @@
 import { useNavigation } from '@react-navigation/core';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import TabNavigation from './TabNavigation';
 import { View, Text, StyleSheet, Pressable, Image, TextInput, ScrollView, Keyboard } from 'react-native';
 import { FontFamily, FontSize } from '../GlobalStyles';
 import CheckBox from 'expo-checkbox';
 
 const FileClaimScreen1 = () => {
+
+    //use state hook
+    const [isChecked1, setChecked1] = useState(false);
+    const [isChecked2, setChecked2] = useState(false);
+    const [isChecked3, setChecked3] = useState(false);
+    const [isChecked4, setChecked4] = useState(false);
+    const [isChecked5, setChecked5] = useState(false);
+    const [isChecked6, setChecked6] = useState(false);
+    const [isChecked7, setChecked7] = useState(false);
+
     //use navigation hook
     const navigation = useNavigation();
 
-    //use state hook
-    const [isChecked, setChecked] = useState(false);
+    //create a obj using state
+    const [claim, setClaim] = useState({
+        policyNumber: "",
+        petName: "",
+        yourName: "",
+        reasonForVETVisit: [],
+        nameOfBodyPart: "",
+    })
 
     return (
         <>
@@ -22,7 +38,7 @@ const FileClaimScreen1 = () => {
 
                 {/* ----- back button ------ */}
                 <View>
-                    <Pressable onPress={() => navigation.navigate("Dashboard")}>
+                    <Pressable style={{ width: 50, marginLeft: 15 }} onPress={() => navigation.navigate("Dashboard")}>
                         <Image source={require("../assets/assets/group.png")} style={styles.backbutton} />
                     </Pressable>
                 </View>
@@ -53,14 +69,14 @@ const FileClaimScreen1 = () => {
                         <View style={styles.checkboxes}>
                             <View style={styles.checkboxContainer}>
                                 <CheckBox
-                                    style={styles.checkbox} color={isChecked ? 'grey' : undefined}
-                                    value={isChecked} onValueChange={setChecked} />
+                                    style={styles.checkbox} color={isChecked1 ? 'grey' : undefined}
+                                    value={isChecked1} onValueChange={setChecked1} />
                                 <Text style={styles.label}>Preventive visit</Text>
                             </View>
                             <View style={[styles.checkboxContainer, { marginLeft: 64 }]}>
                                 <CheckBox
-                                    style={styles.checkbox} color={isChecked ? 'grey' : undefined}
-                                    value={isChecked} onValueChange={setChecked} />
+                                    style={styles.checkbox} color={isChecked2 ? 'grey' : undefined}
+                                    value={isChecked2} onValueChange={setChecked2} />
                                 <Text style={styles.label}>Skin allergies</Text>
                             </View>
                         </View>
@@ -69,14 +85,14 @@ const FileClaimScreen1 = () => {
                         <View style={styles.checkboxes}>
                             <View style={styles.checkboxContainer}>
                                 <CheckBox
-                                    style={styles.checkbox} color={isChecked ? 'grey' : undefined}
-                                    value={isChecked} onValueChange={setChecked} />
+                                    style={styles.checkbox} color={isChecked3 ? 'grey' : undefined}
+                                    value={isChecked3} onValueChange={setChecked3} />
                                 <Text style={styles.label}>Vomiting/upset stomach</Text>
                             </View>
                             <View style={[styles.checkboxContainer, { marginLeft: 10 }]}>
                                 <CheckBox
-                                    style={styles.checkbox} color={isChecked ? 'grey' : undefined}
-                                    value={isChecked} />
+                                    style={styles.checkbox} color={isChecked4 ? 'grey' : undefined}
+                                    value={isChecked4} onValueChange={setChecked4} />
                                 <Text style={styles.label}>Skin infection</Text>
                             </View>
                         </View>
@@ -85,14 +101,14 @@ const FileClaimScreen1 = () => {
                         <View style={styles.checkboxes}>
                             <View style={styles.checkboxContainer}>
                                 <CheckBox
-                                    style={styles.checkbox} color={isChecked ? 'grey' : undefined}
-                                    value={isChecked} onValueChange={setChecked} />
+                                    style={styles.checkbox} color={isChecked5 ? 'grey' : undefined}
+                                    value={isChecked5} onValueChange={setChecked5} />
                                 <Text style={styles.label}>Ear infection</Text>
                             </View>
                             <View style={[styles.checkboxContainer, { marginLeft: 80 }]}>
                                 <CheckBox
-                                    style={styles.checkbox} color={isChecked ? 'grey' : undefined}
-                                    value={isChecked} onValueChange={setChecked} />
+                                    style={styles.checkbox} color={isChecked6 ? 'grey' : undefined}
+                                    value={isChecked6} onValueChange={setChecked6} />
                                 <Text style={styles.label}>Arthritis</Text>
                             </View>
                         </View>
@@ -101,8 +117,8 @@ const FileClaimScreen1 = () => {
                         <View style={styles.checkboxes}>
                             <View style={styles.checkboxContainer}>
                                 <CheckBox
-                                    style={styles.checkbox} color={isChecked ? 'grey' : undefined}
-                                    value={isChecked} onValueChange={setChecked} />
+                                    style={styles.checkbox} color={isChecked7 ? 'grey' : undefined}
+                                    value={isChecked7} onValueChange={setChecked7} />
                                 <Text style={styles.label}>Other (Please Specify)</Text>
                             </View>
                         </View>
@@ -223,7 +239,7 @@ const styles = StyleSheet.create({
     backbutton: {
         width: 35,
         height: 40,
-        marginHorizontal: 20,
+        marginHorizontal: 5,
         marginBottom: 5,
         tintColor: 'black',
     },
