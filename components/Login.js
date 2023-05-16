@@ -136,7 +136,7 @@ const Login = () => {
                   <TextInput style={styles.input} onChangeText={pass => setPassword(pass)} secureTextEntry={!showPassword} value={password} ></TextInput>
                   {renderPasswordVisibilityToggle()}
                 </View>
-                <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={() => { }} >Forgot Password ?</Text>
+                
               </>
               :
               <>
@@ -153,10 +153,17 @@ const Login = () => {
                   <TextInput style={styles.input} onChangeText={pass => setPassword(pass)} secureTextEntry={!showPassword} value={password} ></TextInput>
                   {renderPasswordVisibilityToggle()}
                 </View>
-                <Text style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }} onPress={() => { console.log("forgot password") }} >Forgot Password ?</Text>
+              
               </>
+              
           }
-        </View>
+          {/* // ForgotPassword */}
+            <Text onPress={() => navigation.navigate("ForgotPasswordScreen1") } 
+           style={{ textAlign: 'right', fontWeight: 500, paddingRight: 10, }}  >Forgot Password ?</Text>
+
+           </View>
+           
+         
 
         {/* -- Login button -- */}
         <View style={{ alignItems: 'center', borderWidth: 0, paddingTop: 20 }}>
@@ -165,6 +172,7 @@ const Login = () => {
           </Pressable>
         </View>
       </View>
+      
 
     </ScrollView >
   );
