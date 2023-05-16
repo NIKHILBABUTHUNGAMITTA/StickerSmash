@@ -17,11 +17,12 @@ const Dashboard = () => {
                     <Text style={styles.welcomeBack}>Welcome back,
                         <Text style={styles.deep}>{`\nDeep!`}</Text>
                     </Text>
-                    <Pressable onPress={() => { alert("Notifications icon is pressed") }}>
+                    <Pressable onPress={() =>navigation.navigate("NotificationScreen1")}>
                         <Image
                             style={styles.bellIcon}
                             source={require('../assets/assets/bellremovebgpreview-1.png')}
                         />
+                        {/* <Pressable onPress={() =>navigation.navigate("NotificationScreen1")}> */}
                     </Pressable>
                 </View>
 

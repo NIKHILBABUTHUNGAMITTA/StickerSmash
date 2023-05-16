@@ -1,13 +1,6 @@
 import { useNavigation } from "@react-navigation/core";
 import React from "react";
-import {
-  View,
-  Text,
-  Pressable,
-  Image,
-  StyleSheet,
-  ScrollView,
-} from "react-native";
+import {View,Text,Pressable,Image, StyleSheet,ScrollView} from "react-native";
 import { FontFamily, FontSize } from "../GlobalStyles";
 import { TextInput} from "@react-native-material/core";;
 

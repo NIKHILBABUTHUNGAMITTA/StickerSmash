@@ -9,6 +9,7 @@ import * as Font from 'expo-font';
 
 //imports
 import Dashboard from './components/Dashboard';
+import NotificationScreen1 from './components/NotificationScreen1';
 import Login from './components/Login';
 import PolicyInformation from './components/PolicyInformation';
 import ClaimHistory from './components/ClaimHistory';
@@ -79,6 +80,7 @@ export default class App extends React.Component {
               <Stack.Screen name="ForgotPasswordScreen3" component={ForgotPasswordScreen3}/>
               <Stack.Screen name="ForgotPasswordScreen4" component={ForgotPasswordScreen4}/>
               <Stack.Screen name='Dashboard' component={Dashboard} />
+              <Stack.Screen name='NotificationScreen1' component={NotificationScreen1} />
               <Stack.Screen name='PolicyInformation' component={PolicyInformation} />
               <Stack.Screen name="ClaimHistory" component={ClaimHistory} />
               <Stack.Screen name="NoClaimsFoundPage" component={NoClaimsFoundPage} />

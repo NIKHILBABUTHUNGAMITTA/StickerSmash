@@ -5,7 +5,7 @@ import { FontFamily, FontSize } from '../GlobalStyles';
 import NoClaimsFoundPage from './NoClaimsFoundPage';
 import TabNavigation from './TabNavigation';
 
-const ClaimHistory = () => {
+const NotificationScreen1 = () => {
   const navigation = useNavigation();
   const [value, setValue] = useState(["TE"]);
   
@@ -19,7 +19,7 @@ const ClaimHistory = () => {
               <View style={{ backgroundColor: "#f1f1f1", padding: 20, marginBottom: 7, }}></View>
 
               {/* ----- My cliams History ---------- */}
-              <Text style={styles.headerText}>My Claims History</Text>
+              <Text style={styles.headerText}>NotificationScreen</Text>
 
               {/* ---------- back button -------------- */}
               <View>
@@ -30,9 +30,9 @@ const ClaimHistory = () => {
 
               {/* ------------ List of cliams ------------ */}
               <ScrollView style={styles.claimsList}>
-                <Pressable style={[styles.claim, styles.shadowProp]} onPress={() => navigation.navigate("ClaimHistroyDetails")}>
+                <Pressable style={[styles.claim, styles.shadowProp]} onPress={() => alert("Clicked Notification")}>
                   <View style={{}}>
-                    <Text style={styles.claimTitle}>Claim #3812739417</Text>
+                    <Text style={styles.claimTitle}>Dental visit</Text>
                     <Text style={styles.claiminfo}>Ear Infection claim dated 15th May 2023</Text>
                   </View>
                   {/* <View> */}
@@ -42,6 +42,47 @@ const ClaimHistory = () => {
                   />
                   {/* </View> */}
                 </Pressable>
+
+                <Pressable style={[styles.claim, styles.shadowProp]} onPress={() => alert("Clicked Notification")}>
+                  <View style={{}}>
+                    <Text style={styles.claimTitle}>Dental visit</Text>
+                    <Text style={styles.claiminfo}>Ear Infection claim dated 15th May 2023</Text>
+                  </View>
+                  {/* <View> */}
+                  <Image
+                    style={styles.nextBtn}
+                    source={require('../assets/assets/icon--light--month-chevron10.png')}
+                  />
+                  {/* </View> */}
+                </Pressable>
+
+                <Pressable style={[styles.claim, styles.shadowProp]} onPress={() => Alert.alert("Clicked Notification")}>
+                  <View style={{}}>
+                    <Text style={styles.claimTitle}>Dental visit</Text>
+                    <Text style={styles.claiminfo}>Ear infection claim dated 15th May 2023</Text>
+                  </View>
+                  {/* <View> */}
+                  <Image
+                    style={styles.nextBtn}
+                    source={require('../assets/assets/icon--light--month-chevron10.png')}
+                  />
+                  {/* </View> */}
+                </Pressable>
+
+                <Pressable style={[styles.claim, styles.shadowProp]} onPress={() => Alert.alert("Clicked Notification")}>
+                  <View style={{}}>
+                    <Text style={styles.claimTitle}>Dental visit</Text>
+                    <Text style={styles.claiminfo}>Ear Infection claim dated 15th May 2023</Text>
+                  </View>
+                  {/* <View> */}
+                  <Image
+                    style={styles.nextBtn}
+                    source={require('../assets/assets/icon--light--month-chevron10.png')}
+                  />
+                  {/* </View> */}
+                </Pressable>
+
+                
               </ScrollView>
             </View>
 
@@ -61,7 +102,7 @@ const ClaimHistory = () => {
   )
 }
 
-export default ClaimHistory
+export default NotificationScreen1
 
 
 const styles = StyleSheet.create({
