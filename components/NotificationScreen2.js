@@ -19,7 +19,7 @@ const NotificationScreen1 = () => {
               <View style={{ backgroundColor: "#f1f1f1", padding: 20, marginBottom: 7, }}></View>
 
               {/* ----- NotificationScreen ---------- */}
-              <Text style={styles.headerText}>NotificationScreen</Text>
+              <Text style={styles.headerText}>Notification</Text>
 
               {/* ---------- back button -------------- */}
               <View>
@@ -28,7 +28,7 @@ const NotificationScreen1 = () => {
                 </Pressable>
               </View>
 
-              {/* ------------ List of Notifications ------------ */}
+              {/* ------------ Notifications ------------ */}
               <ScrollView style={styles.claimsList}>
                 <Pressable style={[styles.claim, styles.shadowProp]} onPress={() =>navigation.navigate("NotificationScreen2")}>
                   <View style={{}}>
@@ -41,48 +41,7 @@ const NotificationScreen1 = () => {
                     source={require('../assets/assets/icon--light--month-chevron10.png')}
                   />
                   {/* </View> */}
-                </Pressable>
-
-                <Pressable style={[styles.claim, styles.shadowProp]} onPress={() => alert("Clicked Notification")}>
-                  <View style={{}}>
-                    <Text style={styles.claimTitle}>Ear Infection</Text>
-                    <Text style={styles.claiminfo}>Ear Infection Vet Visit</Text>
-                  </View>
-                  {/* <View> */}
-                  <Image
-                    style={styles.nextBtn}
-                    source={require('../assets/assets/icon--light--month-chevron10.png')}
-                  />
-                  {/* </View> */}
-                </Pressable>
-
-                <Pressable style={[styles.claim, styles.shadowProp]} onPress={() => Alert.alert("Clicked Notification")}>
-                  <View style={{}}>
-                    <Text style={styles.claimTitle}>Eye Care</Text>
-                    <Text style={styles.claiminfo}>Eye Cleaning Vet Visit</Text>
-                  </View>
-                  {/* <View> */}
-                  <Image
-                    style={styles.nextBtn}
-                    source={require('../assets/assets/icon--light--month-chevron10.png')}
-                  />
-                  
-                </Pressable>
-
-                {/* <Pressable style={[styles.claim, styles.shadowProp]} onPress={() => Alert.alert("Clicked Notification")}>
-                  <View style={{}}>
-                    <Text style={styles.claimTitle}>Dental visit</Text>
-                    <Text style={styles.claiminfo}>Ear Infection claim dated 15th May 2023</Text>
-                  </View>
-                 
-                  <Image
-                    style={styles.nextBtn}
-                    source={require('../assets/assets/icon--light--month-chevron10.png')}
-                  />
-                 
-                </Pressable> */}
-
-                
+                </Pressable>  
               </ScrollView>
             </View>
 
@@ -128,16 +87,16 @@ const styles = StyleSheet.create({
   },
   claim: {
     margin: 17,
-    padding: 20,
+    padding: 180,
     flexDirection: 'row',
     justifyContent: 'space-between',
     // borderWidth: 1,
-    borderRadius: 20,
+    borderRadius: 10,
     alignItems: 'center',
   },
   shadowProp: {
     shadowOffset: { width: 2, height: 2 },
-    shadowColor: 'black',
+    shadowColor: 'smokedwhite',
     shadowRadius: 1,
     shadowOpacity: 2,
     elevation: 10,

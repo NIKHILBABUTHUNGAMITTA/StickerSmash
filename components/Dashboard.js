@@ -22,7 +22,6 @@ const Dashboard = () => {
                             style={styles.bellIcon}
                             source={require('../assets/assets/bellremovebgpreview-1.png')}
                         />
-                        {/* <Pressable onPress={() =>navigation.navigate("NotificationScreen1")}> */}
                     </Pressable>
                 </View>
 

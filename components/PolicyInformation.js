@@ -15,7 +15,7 @@ const PolicyInformation = () => {
                 <View style={{ backgroundColor: "#f1f1f1", padding: 20, marginBottom: 7, }}></View>
 
                 {/* ------- Three icons on top ------  */}
-                <View style={styles.groupIcons}>
+                {/* <View style={styles.groupIcons}>
                     <Image
                         style={styles.groupIconsSize}
                         source={require('../assets/assets/group-28-1.png')}
@@ -28,7 +28,7 @@ const PolicyInformation = () => {
                         style={styles.groupIconsSize}
                         source={require('../assets/assets/group-28-3.png')}
                     />
-                </View>
+                </View> */}
 
                 <View>
                     <Pressable style={{width:60,marginLeft:10,}} onPress={() => navigation.navigate("Dashboard")}>

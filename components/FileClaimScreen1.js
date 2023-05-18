@@ -19,6 +19,8 @@ const FileClaimScreen1 = () => {
     //use navigation hook
     const navigation = useNavigation();
 
+    const [isChecked, setChecked] = useState(false);
+
     //create a obj using state
     const [claim, setClaim] = useState({
         policyNumber: "",
@@ -217,10 +219,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#016DAB",
         justifyContent: 'center',
         padding: 15,
-        marginHorizontal: 40,
+        marginHorizontal: 90,
         marginVertical: 30,
         borderRadius: 15,
     },
+    nextButtonDisabled: {
+        backgroundColor: 'grey',
+      },
     nextText: {
         color: 'white',
         fontSize: 15,

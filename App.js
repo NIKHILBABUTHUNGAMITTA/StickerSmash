@@ -19,11 +19,14 @@ import FileClaimScreen1 from './components/FileClaimScreen1';
 import FileClaimScreen2 from './components/FileClaimScreen2';
 import FileClaimScreen3 from './components/FileClaimScreen3';
 import Servicing from './components/Servicing';
+import RenewalMyPolicy from './components/RenewalMyPolicy';
+import OwnerShipScreen1 from './components/OwnerShipScreen1';
 import MyAccount from './components/MyAccount';
 import ForgotPasswordScreen1 from './components/ForgotPasswordScreen1';
 import ForgotPasswordScreen2 from './components/ForgotPasswordScreen2';
 import ForgotPasswordScreen4 from './components/ForgotPasswordScreen4';
 import ForgotPasswordScreen3 from './components/ForgotPasswordScreen3';
+import NotificationScreen2 from './components/NotificationScreen2';
 
 const Stack = createNativeStackNavigator();
 
@@ -81,6 +84,7 @@ export default class App extends React.Component {
               <Stack.Screen name="ForgotPasswordScreen4" component={ForgotPasswordScreen4}/>
               <Stack.Screen name='Dashboard' component={Dashboard} />
               <Stack.Screen name='NotificationScreen1' component={NotificationScreen1} />
+              <Stack.Screen name='NotificationScreen2' component={NotificationScreen2} />
               <Stack.Screen name='PolicyInformation' component={PolicyInformation} />
               <Stack.Screen name="ClaimHistory" component={ClaimHistory} />
               <Stack.Screen name="NoClaimsFoundPage" component={NoClaimsFoundPage} />
@@ -89,6 +93,8 @@ export default class App extends React.Component {
               <Stack.Screen name='FileClaimScreen2' component={FileClaimScreen2} />
               <Stack.Screen name='FileClaimScreen3' component={FileClaimScreen3} />
               <Stack.Screen name="Servicing" component={Servicing} />
+              <Stack.Screen name='OwnerShipScreen1' component={OwnerShipScreen1} />
+              <Stack.Screen name='RenewalMyPolicy' component={RenewalMyPolicy} />
               <Stack.Screen name="MyAccount" component={MyAccount} />
              
             </Stack.Navigator>

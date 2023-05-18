@@ -75,7 +75,7 @@ const Servicing = () => {
                             </Pressable>
 
                             {/* fourth option */}
-                            <Pressable style={styles.clickOption} onPress={() => alert("Renew my Policy")}>
+                            <Pressable style={styles.clickOption} onPress={() => navigation.navigate("RenewalMyPolicy")}>
                                 <View style={styles.blurBg}>
                                     <Octicons name="shield-check" size={19} color="#016DAB" />
                                 </View>
