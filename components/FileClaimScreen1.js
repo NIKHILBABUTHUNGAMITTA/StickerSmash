@@ -4,9 +4,20 @@ import TabNavigation from './TabNavigation';
 import { View, Text, StyleSheet, Pressable, Image, TextInput, ScrollView, Keyboard } from 'react-native';
 import { FontFamily, FontSize } from '../GlobalStyles';
 import CheckBox from 'expo-checkbox';
+import COLORS from '../assets/assets/colors/colors';
+import { Next } from 'react-bootstrap/esm/PageItem';
+import Button from './Validation/Button';
+import Input from './Validation/Input';
+import Loader from './Validation/Loader';
 
 const FileClaimScreen1 = () => {
-
+    // const [inputs, setInputs] = React.useState({
+    //     policyNumber: "",
+    //     petName: "",
+    //     yourName: "",
+    //     reasonForVETVisit: [],
+    //     nameOfBodyPart: "",
+    //   });
     //use state hook
     const [isChecked1, setChecked1] = useState(false);
     const [isChecked2, setChecked2] = useState(false);
@@ -29,6 +40,54 @@ const FileClaimScreen1 = () => {
         reasonForVETVisit: [],
         nameOfBodyPart: "",
     })
+    // const validate = () => {
+    //     Keyboard.dismiss();
+    //     let isValid = true;
+    
+    //     if (!inputs.policyNumber) {
+    //       handleError('Please input email', 'email');
+    //       isValid = false;
+    //     } else if (!inputs.email.match(/\S+@\S+\.\S+/)) {
+    //       handleError('Please input a valid email', 'email');
+    //       isValid = false;
+    //     }
+    
+    //     if (!inputs.petName) {
+    //       handleError('Please input fullname', 'fullname');
+    //       isValid = false;
+    //     }
+    
+    //     if (!inputs.yourName) {
+    //       handleError('Please input phone number', 'phone');
+    //       isValid = false;
+    //     }
+    
+    //     if (!inputs.reasonForVETVisit) {
+    //       handleError('Please input password', 'password');
+    //       isValid = false;
+    //     } else if (inputs.password.length < 5) {
+    //       handleError('Min password length of 5', 'password');
+    //       isValid = false;
+    //     }
+
+        // if (!inputs.nameOfBodyPart) {
+        //     handleError('Please input password', 'password');
+        //     isValid = false;
+        //   } else if (inputs.password.length < 5) {
+        //     handleError('Min password length of 5', 'password');
+        //     isValid = false;
+        //   }
+    
+        // if (isValid) {
+        //   Next();
+        // }
+    //   };
+    //   const handleOnchange = (text, input) => {
+    //     setInputs(prevState => ({...prevState, [input]: text}));
+    //   };
+    //   const handleError = (error, input) => {
+    //     setErrors(prevState => ({...prevState, [input]: error}));
+    //   };
 
     return (
         <>
@@ -135,6 +194,7 @@ const FileClaimScreen1 = () => {
                         <Text style={styles.formLabel}>Name of body part <Text style={{ color: "#F81919" }}> *</Text></Text>
                         <TextInput style={styles.formControl} placeholder="Enter the effected body part" />
                     </View>
+
                     <View>
                         <Pressable style={styles.nextButton} onPress={() => navigation.navigate("FileClaimScreen2")}>
                             <Text style={styles.nextText}>NEXT</Text>

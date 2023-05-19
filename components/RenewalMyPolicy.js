@@ -71,7 +71,7 @@ const OwnerShipScreen1 = () => {
                                     color={isChecked ? 'grey' : undefined}
                                     value={isChecked} onValueChange={setChecked} />
                             </View>
-                            <Text style={styles.label1}>{`I accept this transfer of ownership and request that Petlyf issue a new policy to me covering the pet referenced above, and accept financial responsibility for this policy when a new policy number and effective date are issued`}</Text>
+                            <Text style={styles.label1}>{`By clicking here, I state that I have read and understood `}<Text style={{fontWeight:"500",fontSize:15,textDecorationLine: 'underline',color:'#FF0000'}}>terms and conditions.</Text></Text>
                         </View>
                     </View>
                     
@@ -124,6 +124,12 @@ const styles = StyleSheet.create({
         fontFamily: FontFamily.interSemibold,
         fontSize: 12,
     },
+    // input2 :{
+    //     fontWeight:"500",
+    //     fontSize:17,
+        // textDecorationLine: 'underline',
+        // // color:'#FF0000'
+    // },
 
     // form
     formheaders: {

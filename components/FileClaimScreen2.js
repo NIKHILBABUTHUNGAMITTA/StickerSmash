@@ -6,6 +6,7 @@ import TabNavigation from './TabNavigation';
 import CheckBox from 'expo-checkbox';
 import { Ionicons } from '@expo/vector-icons';
 
+
 const FileClaimScreen2 = () => {
 
     //use navigation hook
@@ -58,7 +59,7 @@ const FileClaimScreen2 = () => {
                     </View>
 
                     <View style={styles.formItem}>
-                        <Text style={styles.formLabel}>Upload Bills</Text>
+                        <Text style={styles.formLabel}>Upload Bills<Text style={{ color: "#F81919" }}> *</Text></Text>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <TextInput style={styles.input} placeholder="Select file to upload" />
                             {renderUploadFile()}
