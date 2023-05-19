@@ -55,7 +55,7 @@ const Dashboard = () => {
 
                     {/* ------- Pet Details ---------- */}
                     <View style={styles.menuItem}>
-                        <Pressable style={[styles.menuInnerItem, { backgroundColor: Color.cornsilk }]} onPress={() => alert("Pet details is clicked")}>
+                        <Pressable style={[styles.menuInnerItem, { backgroundColor: Color.cornsilk }]} onPress={() => navigation.navigate("Petdetails")}>
                             <View style={styles.pawremovebgpreviewBg}>
                                 <Image style={styles.pawremovebgpreview} source={require("../assets/assets/pwt-dextails-pawremovebgpreview-11.png")} />
                             </View>

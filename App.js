@@ -27,6 +27,7 @@ import ForgotPasswordScreen2 from './components/ForgotPasswordScreen2';
 import ForgotPasswordScreen4 from './components/ForgotPasswordScreen4';
 import ForgotPasswordScreen3 from './components/ForgotPasswordScreen3';
 import NotificationScreen2 from './components/NotificationScreen2';
+import OwnerShipScreen2 from './components/OwnerShipScreen2';
 
 const Stack = createNativeStackNavigator();
 
@@ -94,6 +95,7 @@ export default class App extends React.Component {
               <Stack.Screen name='FileClaimScreen3' component={FileClaimScreen3} />
               <Stack.Screen name="Servicing" component={Servicing} />
               <Stack.Screen name='OwnerShipScreen1' component={OwnerShipScreen1} />
+              <Stack.Screen name='OwnerShipScreen2' component={OwnerShipScreen2} />
               <Stack.Screen name='RenewalMyPolicy' component={RenewalMyPolicy} />
               <Stack.Screen name="MyAccount" component={MyAccount} />
              

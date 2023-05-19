@@ -85,9 +85,16 @@ const OwnerShipScreen1 = () => {
                     </View>
                     
                     <View>
-                        <Pressable style={styles.nextButton} onPress={() => navigation.navigate("OwnerShipScreen2")}>
+                        {/* <Pressable style={styles.nextButton} onPress={() => navigation.navigate("OwnerShipScreen2")}>
                             <Text style={styles.nextText}>SUBMIT</Text>
-                        </Pressable>
+                        </Pressable> */}
+                         <Pressable
+          style={[styles.nextButton, isChecked ? {} : styles.nextButtonDisabled]} // Add disabled style
+          onPress={() => isChecked ? navigation.navigate("OwnerShipScreen2") : navigation.navigate("OwnerShipScreen1")}
+          disabled={!isChecked} // Disable the button when checkbox is not checked
+        >
+          <Text style={styles.nextText}>SUBMIT</Text>
+        </Pressable>
                     </View>
                 </ScrollView>
             </View>
@@ -168,10 +175,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#016DAB",
         justifyContent: 'center',
         padding: 14,
-        marginHorizontal: 30,
+        marginHorizontal: 120,
         marginBottom: 20,
         borderRadius: 15,
     },
+    nextButtonDisabled: {
+        backgroundColor: 'grey',
+      },
     nextText: {
         color: 'white',
         fontSize: 15,
